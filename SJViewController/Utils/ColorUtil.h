@@ -1,0 +1,74 @@
+//
+//  ColorUtil.h
+//  
+//
+//  Created by Soldier on 14-6-19.
+//  Copyright (c) 2014年 Soldier. All rights reserved.
+//
+
+#define COLOR_BLACK_1 RGBCOLOR(88,  89,  87 )
+#define COLOR_BLACK_2 RGBCOLOR(229, 229, 229)
+#define COLOR_BLACK_3 RGBCOLOR(56,  60,  60 )
+#define COLOR_BLACK_4 RGBCOLOR(100, 100, 100)
+#define COLOR_BLACK_5 RGBCOLOR(115, 115, 115)
+#define COLOR_BLACK_6 RGBCOLOR(52,  52,  52)
+#define COLOR_BLACK_7 RGBCOLOR(92,  90,  89)
+#define COLOR_GRAY_1  RGBCOLOR(163, 163, 162)
+#define COLOR_GRAY_2  RGBCOLOR(243, 243, 242)
+#define COLOR_GRAY_3  RGBCOLOR(192, 198, 201)
+#define COLOR_GRAY_4  RGBCOLOR(229, 228, 230)
+#define COLOR_GRAY_5  RGBCOLOR(238, 238, 246)
+#define COLOR_GRAY_6  RGBCOLOR(180, 180, 180)
+#define COLOR_GRAY_7  RGBCOLOR(141, 141, 141)
+#define COLOR_GRAY_8  RGBCOLOR(240, 240, 240)
+#define COLOR_GRAY_9  RGBCOLOR(116, 117, 117)
+#define COLOR_GRAY_10 RGBCOLOR(211, 212, 213)
+#define COLOR_WHITE_1  RGBCOLOR(255, 255, 255)
+#define COLOR_BLUE_1  RGBCOLOR(0,   189, 211)
+#define COLOR_BLUE_2  RGBCOLOR(0,   121, 254)
+#define COLOR_BLUE_3  RGBCOLOR(0,   122, 255)
+#define COLOR_PINK_1  RGBCOLOR(231, 81 , 141)
+#define COLOR_RED_1   RGBCOLOR(250, 70 , 70 )
+#define COLOR_RED_2   RGBCOLOR(255, 87 , 81 )
+#define COLOR_YELLOW_3 RGBCOLOR(252, 192, 0 )
+#define COLOR_ORANGE_1 RGBCOLOR(255,156, 70 )
+#define COLOR_ORANGE_2 RGBCOLOR(255,192, 0 )
+#define COLOR_GREEN_1 RGBCOLOR(114, 202, 62 )
+#define COLOR_PURPLE_1 RGBCOLOR(115, 115, 115)//主文
+#define COLOR_PURPLE_2 RGBCOLOR(205, 113, 241)//紫色2
+#define COLOR_SILVER_1 RGBCOLOR(234, 237, 247)//银色1
+#define COLOR_THIN_GRAY_1  RGBACOLOR(243, 243, 242, 0.5)
+#define COLOR_HIGHTLIGHT1 RGBACOLOR(0, 0, 0, 0.07)
+#define COLOR_HIGHTLIGHT2 RGBACOLOR(0, 0, 0, 0.07)
+
+/*
+ * 新版
+ */
+
+#define COLOR_GRAY_BG    RGBCOLOR(234, 234, 234) //view灰色背景
+#define COLOR_NAVBAR_BG  RGBCOLOR(246, 246, 246) //顶部导航栏背景底色 二级页面
+#define COLOR_IMAGE_GAY_BG RGBCOLOR(241, 241, 241)  //没图片的默认灰色背景
+
+#define COLOR_YELLOW_1 RGBCOLOR(255, 224, 78) //黄色 主色
+#define COLOR_YELLOW_2 RGBCOLOR(255, 220, 40) //黄色 辅助色
+
+#define COLOR_BROWN_1  RGBCOLOR(243, 152, 0) //褐色 主色
+
+//文本颜色
+#define COLOR_TEXT_1 RGBCOLOR(53, 53, 53)  //主文
+#define COLOR_TEXT_1_UP RGBACOLOR(53, 53, 53, 0.5)  //主文
+#define COLOR_TEXT_2 RGBCOLOR(115, 115, 115) //副文
+#define COLOR_TEXT_3 RGBCOLOR(163, 163, 163) //提示文案
+#define COLOR_TEXT_4 RGBCOLOR(210, 211, 212) //弱化文案
+#define COLOR_TEXT_5 RGBCOLOR(184, 184, 184) //弱化文案（空页面提醒）
+#define COLOR_TEXT_RED RGBCOLOR(250, 70, 70)  //价格，备注
+
+#define COLOR_TEXT_88 RGBCOLOR(88, 88, 88) //88 文本
+
+@interface ColorUtil : NSObject
+
+//16进制颜色(html颜色值)字符串转为UIColor
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert;
+
+
+@end
