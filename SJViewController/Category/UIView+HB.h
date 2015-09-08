@@ -191,7 +191,7 @@ CG_INLINE CGFloat GTFixHeightFlaot(CGFloat height) {
         return height;
     }
     
-    height = Isipad() ? height*mainFrme.size.width/640*2 : height*mainFrme.size.height/1096*2 ;
+    height = IsiPad() ? height*mainFrme.size.width/640*2 : height*mainFrme.size.height/1096*2 ;
     height = CGFloatForView(height);//需要取整，否则1像素分割线无法显示
     return height;
 }
@@ -203,7 +203,7 @@ CG_INLINE CGFloat GTFixHeightFlaotIpad(CGFloat height) {
         return height;
     }
     
-    height = Isipad() ? height*mainFrme.size.width/640*2*0.65 : height*mainFrme.size.height/1096*2 ;
+    height = IsiPad() ? height*mainFrme.size.width/640*2*0.65 : height*mainFrme.size.height/1096*2 ;
     height = CGFloatForView(height);//需要取整，否则1像素分割线无法显示
     return height;
 }
@@ -225,7 +225,7 @@ CG_INLINE CGFloat GTFixWidthFlaotIpad(CGFloat width) {
         return width;
     }
     
-    width = Isipad() ? width*mainFrme.size.width/640*2*0.65 : width*mainFrme.size.width/640*2; ;
+    width = IsiPad() ? width*mainFrme.size.width/640*2*0.65 : width*mainFrme.size.width/640*2; ;
     width = CGFloatForView(width);//需要取整，否则1像素分割线无法显示
     return width;
 }
@@ -235,7 +235,7 @@ CG_INLINE CGFloat GTReHeightFlaot(CGFloat height) {
     if (mainFrme.size.height/1096*2 < 1) {
         return height;
     }
-    height = Isipad() ? height*640/mainFrme.size.width/2 : height*1096/(mainFrme.size.height*2);
+    height = IsiPad() ? height*640/mainFrme.size.width/2 : height*1096/(mainFrme.size.height*2);
     height = CGFloatForView(height);//需要取整，否则1像素分割线无法显示
     return height;
 }

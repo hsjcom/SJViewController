@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B71AE666-2F37-4977-BF49-72A98E3B51C6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SJViewController</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C9CFC11F8210022099FCB3F6B9571B39209D7427</key>
+		<string>https://github.com/hsjcom/SJViewController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SJViewController.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C9CFC11F8210022099FCB3F6B9571B39209D7427</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hsjcom/SJViewController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C9CFC11F8210022099FCB3F6B9571B39209D7427</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C9CFC11F8210022099FCB3F6B9571B39209D7427</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SJViewController</string>
+		</dict>
+	</array>
+</dict>
+</plist>

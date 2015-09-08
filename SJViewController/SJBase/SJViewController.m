@@ -52,7 +52,7 @@
 //            [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
 //
 //        }
-        UIImage *img = Isios7()? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
+        UIImage *img = IsiOS7()? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
         [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
         
         
@@ -85,7 +85,7 @@
     [self.view setBackgroundColor:[self backgroundColor]];
     
     // 设置后 UIview 的frame y就不是从navbar下开始
-    if (Isios7()) {
+    if (IsiOS7()) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
@@ -247,7 +247,7 @@
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = item;
-    self.navigationItem.rightBarButtonItem.width = Isios7() ? -15 : -5;
+    self.navigationItem.rightBarButtonItem.width = IsiOS7() ? -15 : -5;
 }
 
 - (void)removeNavRightBtn {
@@ -293,11 +293,11 @@
 }
 
 - (CGFloat)selfNavigatorHeight {
-    return Isipad() ? 44 : 44;
+    return IsiPad() ? 44 : 44;
 }
 
 - (CGFloat)selfStatusAndNavigatorHeight {
-    return Isios7() ? 20.f + [self selfNavigatorHeight] : [self selfNavigatorHeight];//IOS7自定义navigator bar包含了状态栏20个px
+    return IsiOS7() ? 20.f + [self selfNavigatorHeight] : [self selfNavigatorHeight];//IOS7自定义navigator bar包含了状态栏20个px
 }
 
 - (UIColor *)navigationBarColor {

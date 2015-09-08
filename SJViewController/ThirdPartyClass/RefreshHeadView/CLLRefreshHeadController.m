@@ -126,7 +126,7 @@
         self.preloadEnable = NO;
         self.draggingNeedLoadMore = NO;
         self.contentHeightLimitLoadMore = NO;
-        self.contentHeightLimitLoadMoreOffset = Isipad() ? (100 + CLLDefaultRefreshTotalPixels) : (50 + CLLDefaultRefreshTotalPixels);
+        self.contentHeightLimitLoadMoreOffset = IsiPad() ? (100 + CLLDefaultRefreshTotalPixels) : (50 + CLLDefaultRefreshTotalPixels);
         
         [self setup];
     }

@@ -43,13 +43,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (Isios7()) {
+    if (IsiOS7()) {
         self.interactivePopGestureRecognizer.enabled = NO;
     }
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    if (Isios7()) {
+    if (IsiOS7()) {
         UIScreenEdgePanGestureRecognizer *recognizer = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(paningGestureReceive:)];
         recognizer.delegate = self;
         recognizer.edges = UIRectEdgeLeft;
@@ -67,7 +67,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:(BOOL)animated];
     
-    if (!Isios7()) {
+    if (!IsiOS7()) {
         return;
     }
     
@@ -91,7 +91,7 @@
         }
     }
     
-    if (Isios7()) {
+    if (IsiOS7()) {
         [super pushViewController:viewController animated:NO];
         //    5 大主页面 push 时不执行动画
         UIViewController* root = [self.viewControllers objectAtIndex:0];
@@ -141,10 +141,10 @@
 - (UIImage *)capture {
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(UI_SCREEN_WIDTH, UI_SCREEN_HEIGHT), NO, 0.0);
     
-    if (Isios7()) {
-        [HB_TopView drawViewHierarchyInRect:HB_TopView.bounds afterScreenUpdates:NO];
+    if (IsiOS7()) {
+        [SJ_TopView drawViewHierarchyInRect:SJ_TopView.bounds afterScreenUpdates:NO];
     }else{
-        [HB_TopView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        [SJ_TopView.layer renderInContext:UIGraphicsGetCurrentContext()];
     }
     
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
@@ -160,9 +160,9 @@
     x = x > UI_SCREEN_WIDTH ? UI_SCREEN_WIDTH : x;
     x = x < 0 ? 0 : x;
     
-    CGRect frame = HB_TopView.frame;
+    CGRect frame = SJ_TopView.frame;
     frame.origin.x = x;
-    HB_TopView.frame = frame;
+    SJ_TopView.frame = frame;
     
     CGFloat y = x * (fabs(_startBackViewX) / UI_SCREEN_WIDTH);
     [_lastScreenShotView setFrame:CGRectMake(_startBackViewX + y, 0, _lastScreenShotView.width, _lastScreenShotView.height)];
@@ -194,7 +194,7 @@
     if (![topView canDragBack]) return;
     
     // we get the touch position by the window's coordinate
-    CGPoint touchPoint = [recoginzer locationInView:HB_Keywindow];
+    CGPoint touchPoint = [recoginzer locationInView:SJ_Keywindow];
     
     // begin paning, show the backgroundView(last screenshot),if not exist, create it.
     if (recoginzer.state == UIGestureRecognizerStateBegan) {
@@ -204,9 +204,9 @@
         
         [self createBGViewAndLastScreenShotView];
         
-        HB_TopView.layer.shadowRadius = 2;
-        HB_TopView.layer.shadowOpacity = 0.3;
-        HB_TopView.layer.shadowPath = [UIBezierPath bezierPathWithRect:HB_TopView.bounds].CGPath;
+        SJ_TopView.layer.shadowRadius = 2;
+        SJ_TopView.layer.shadowOpacity = 0.3;
+        SJ_TopView.layer.shadowPath = [UIBezierPath bezierPathWithRect:SJ_TopView.bounds].CGPath;
     }
     
     //End paning, always check that if it should move right or move left automatically
@@ -220,9 +220,9 @@
                 SJViewController *topView = (SJViewController *)[SJNavAction getCurrentViewController];
                 [topView backViewForSideslip];
                 
-                CGRect frame = HB_TopView.frame;
+                CGRect frame = SJ_TopView.frame;
                 frame.origin.x = 0;
-                HB_TopView.frame = frame;
+                SJ_TopView.frame = frame;
                 
                 _isMoving = NO;
                 self.backgroundView.hidden = YES;
@@ -257,10 +257,10 @@
 
 - (void)createBGViewAndLastScreenShotView {
     if (!self.backgroundView || !self.backgroundView.superview) {
-        CGRect frame = HB_TopView.frame;
+        CGRect frame = SJ_TopView.frame;
         
         self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width , frame.size.height)];
-        [HB_TopView.superview insertSubview:self.backgroundView belowSubview:HB_TopView];
+        [SJ_TopView.superview insertSubview:self.backgroundView belowSubview:SJ_TopView];
         
         _blackMask = [[UIView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _blackMask.backgroundColor = [UIColor blackColor];
@@ -299,9 +299,9 @@
         SJViewController *topView = (SJViewController *)[SJNavAction getCurrentViewController];
         [topView backViewForSideslip];
         
-        CGRect frame = HB_TopView.frame;
+        CGRect frame = SJ_TopView.frame;
         frame.origin.x = 0;
-        HB_TopView.frame = frame;
+        SJ_TopView.frame = frame;
         
         self.backgroundView.hidden = YES;
     }];

@@ -13,7 +13,7 @@
 - (instancetype)initWithTitle:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage tag:(int)tag
 {
     UITabBarItem *item = nil;
-    if (Isios7()) {
+    if (IsiOS7()) {
         // 采用 原图 不让其处理
         item = [self initWithTitle:title image:[UIImage imageNamed:image] selectedImage:[[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         item.tag = tag;
@@ -23,7 +23,7 @@
         
     }
     
-    if (!Isipad()) {
+    if (!IsiPad()) {
         [item setTitlePositionAdjustment:UIOffsetMake(0, -3)];
 //        item.imageInsets = UIEdgeInsetsMake(3, 3, 3, 3);
     }

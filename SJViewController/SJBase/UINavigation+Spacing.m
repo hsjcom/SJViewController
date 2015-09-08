@@ -15,7 +15,7 @@
  */
 - (UIBarButtonItem *)spacer {
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    CGFloat width = Isios7() ? -20.f : -5.0f;
+    CGFloat width = IsiOS7() ? -20.f : -5.0f;
     space.width = width;
 
     return space;

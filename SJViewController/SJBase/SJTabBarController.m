@@ -72,7 +72,7 @@
     
     //设置 barButton  按钮 颜色 字体 按下效果 等
     UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
-    if(Isios7()){
+    if(IsiOS7()){
         [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_1} forState:UIControlStateNormal];
         [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_2} forState:UIControlStateHighlighted];
     }
@@ -97,7 +97,7 @@
 //    UIImage* bgImage = [UIImage imageWithColor:RGBCOLOR(255, 255, 255) size:titleSize];
 //    [navBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];  //设置背景
     
-    if(Isios7()){
+    if(IsiOS7()){
         [navBar setBarTintColor:COLOR_NAVBAR_BG];
     
 //        UIImage *backIndicatorImg = [[UIImage imageNamed:@"navBackIndicatorImg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -115,8 +115,8 @@
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     // 设置 window 的背景色 防止影响 nav 背景色
-    if (Isios7()) {
-        HB_Keywindow.backgroundColor = RGBCOLOR(255, 255, 255);
+    if (IsiOS7()) {
+        SJ_Keywindow.backgroundColor = RGBCOLOR(255, 255, 255);
     }
 }
 

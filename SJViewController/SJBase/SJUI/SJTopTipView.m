@@ -15,7 +15,7 @@
     if (self) {
         self.userInteractionEnabledWhenShow = NO;
         [view addSubview:self];
-        UIFont *font = Isipad() ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:16];
+        UIFont *font = IsiPad() ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:16];
         UIColor *color = [UIColor whiteColor];
         _label = [ViewConstructUtil constructLabel:CGRectZero
                                                text:msg
@@ -33,7 +33,7 @@
     if (self) {
         self.userInteractionEnabledWhenShow = NO;
         [window addSubview:self];
-        UIFont *font = Isipad() ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:16];
+        UIFont *font = IsiPad() ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:16];
         UIColor *color = [UIColor whiteColor];
         _label = [ViewConstructUtil constructLabel:CGRectZero
                                               text:msg
@@ -52,7 +52,7 @@
     if (self) {
         self.userInteractionEnabledWhenShow = NO;
         [view addSubview:self];
-        UIFont *font = Isipad() ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:16];
+        UIFont *font = IsiPad() ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:16];
         UIColor *color = [UIColor whiteColor];
         _label = [ViewConstructUtil constructLabel:CGRectZero
                                               text:nil
@@ -165,7 +165,7 @@
     if ([StringUtil isEmpty:msg]) {
         return;
     }
-    SJTopTipView *tip = [[SJTopTipView alloc] initWithWindows:HB_Keywindow msg:msg];
+    SJTopTipView *tip = [[SJTopTipView alloc] initWithWindows:SJ_Keywindow msg:msg];
     [tip showMessage];
 }
 

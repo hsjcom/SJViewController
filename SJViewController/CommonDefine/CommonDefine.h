@@ -6,23 +6,6 @@
 //  Copyright (c) 2015年 Shaojie Hong. All rights reserved.
 //
 
-
-/**
- *  View->Cell  enum
- */
-typedef enum {
-    CellLocation_Top = 0,
-    CellLocation_Middle = 1,
-    CellLocation_Bottom = 2,
-    CellLocation_TopAndBottom = 3,
-} CellLocation;
-
-typedef enum {
-    AccessoryType_RightGray = 0,
-    AccessoryType_Yes = 1,
-    
-}AccessoryType;
-
 typedef NS_ENUM(int, SJTabState) {
     Tab_Mall      = 0,
     Tab_Category  = 1,
@@ -47,25 +30,23 @@ typedef NS_ENUM(int, SJTabState) {
  */
 
 #define AppDelegateInstance [[UIApplication sharedApplication] delegate]
-#define ReqDelegateInstance (((AppDelegate*)AppDelegateInstance).reqDelegate)
-#define HB_TopView    [AppDelegateInstance window].rootViewController.view
-#define HB_Keywindow  [AppDelegateInstance window]
+#define SJ_TopView    [AppDelegateInstance window].rootViewController.view
+#define SJ_Keywindow  [AppDelegateInstance window]
 
 #define UI_SCREEN_WIDTH  ([[UIScreen mainScreen] bounds].size.width)
 #define UI_SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define StatusBarHeight ([UIApplication sharedApplication].statusBarFrame.size.height)
-#define HBOSVersion()    [[[UIDevice currentDevice] systemVersion] floatValue]
-#define HBOnePixelLineHeight  (1.0/[[UIScreen mainScreen] scale])
+#define OSVersion()    [[[UIDevice currentDevice] systemVersion] floatValue]
+#define OnePixelLineHeight  (1.0 / [[UIScreen mainScreen] scale])
 
-#define Isios8() (HBOSVersion() >= 8.0)
-#define Isios7() (HBOSVersion() >= 7.0)
-#define IsNotios7() (HBOSVersion() < 7.0)
-#define Isipad() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define IsNotipad() (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+#define IsiOS8() (OSVersion() >= 8.0)
+#define IsiOS7() (OSVersion() >= 7.0)
+#define IsNotiOS7() (OSVersion() < 7.0)
+#define IsiPad() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IsiPhone6() ([[UIScreen mainScreen] bounds].size.width >= 750/2 ? YES : NO)
 #define Is3dot5Inch() (UI_SCREEN_HEIGHT <= 480 ? YES : NO)
 
-#define isRetina ([[UIScreen mainScreen] scale] >=2 ? YES : NO)
+#define isRetina ([[UIScreen mainScreen] scale] >= 2 ? YES : NO)
 
 #define RGBCOLOR(r,g,b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
@@ -81,8 +62,6 @@ typedef NS_ENUM(int, SJTabState) {
 #define RELEASE_LAYER_SAFELY(__POINTER) {[__POINTER removeFromSuperlayer]; __POINTER = nil; }
 #define RELEASE_REQ(__POINTER){[__POINTER clearDelegatesAndCancel];__POINTER = nil;}
 
-#define ReleaseView(__View){[__View removeFromSuperview]; __View = nil;}
-
 #define SafeCallSelector(instance,selector)  if (instance && [instance respondsToSelector:selector]) { SafePerformSelector([instance performSelector:selector]);}
 
 #define SafePerformSelector(Stuff) \
@@ -93,15 +72,6 @@ Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
 
-
-#define  CellHeight 44.f
-
-#define LIMIT_SIZE  10
-
-
-#define HOT_MAX_LIMIT 300
-
-#define DefaultGrayImage [UIImage imageNamed:@"gray.png"]
 #define DefaultGrayImgName @"gray.png"
 
 #define ShowMessageBoxTime       2
