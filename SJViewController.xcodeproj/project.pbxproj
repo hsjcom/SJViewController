@@ -24,7 +24,7 @@
 		B213BDBB1B9D4DC80015B33E /* SJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BD9F1B9D4DC80015B33E /* SJModel.m */; };
 		B213BDBC1B9D4DC80015B33E /* SJModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA11B9D4DC80015B33E /* SJModelViewController.m */; };
 		B213BDBD1B9D4DC80015B33E /* SJNavAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA31B9D4DC80015B33E /* SJNavAction.m */; };
-		B213BDBE1B9D4DC80015B33E /* SJNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA51B9D4DC80015B33E /* SJNavigationViewController.m */; };
+		B213BDBE1B9D4DC80015B33E /* SJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA51B9D4DC80015B33E /* SJNavigationController.m */; };
 		B213BDBF1B9D4DC80015B33E /* SJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA71B9D4DC80015B33E /* SJTabBarController.m */; };
 		B213BDC01B9D4DC80015B33E /* SJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA91B9D4DC80015B33E /* SJViewController.m */; };
 		B213BDC11B9D4DC80015B33E /* SJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDAC1B9D4DC80015B33E /* SJTableViewCell.m */; };
@@ -127,8 +127,8 @@
 		B213BDA11B9D4DC80015B33E /* SJModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJModelViewController.m; sourceTree = "<group>"; };
 		B213BDA21B9D4DC80015B33E /* SJNavAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavAction.h; sourceTree = "<group>"; };
 		B213BDA31B9D4DC80015B33E /* SJNavAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavAction.m; sourceTree = "<group>"; };
-		B213BDA41B9D4DC80015B33E /* SJNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavigationViewController.h; sourceTree = "<group>"; };
-		B213BDA51B9D4DC80015B33E /* SJNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavigationViewController.m; sourceTree = "<group>"; };
+		B213BDA41B9D4DC80015B33E /* SJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavigationController.h; sourceTree = "<group>"; };
+		B213BDA51B9D4DC80015B33E /* SJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavigationController.m; sourceTree = "<group>"; };
 		B213BDA61B9D4DC80015B33E /* SJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTabBarController.h; sourceTree = "<group>"; };
 		B213BDA71B9D4DC80015B33E /* SJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTabBarController.m; sourceTree = "<group>"; };
 		B213BDA81B9D4DC80015B33E /* SJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJViewController.h; sourceTree = "<group>"; };
@@ -302,8 +302,8 @@
 				B213BDA11B9D4DC80015B33E /* SJModelViewController.m */,
 				B213BDA21B9D4DC80015B33E /* SJNavAction.h */,
 				B213BDA31B9D4DC80015B33E /* SJNavAction.m */,
-				B213BDA41B9D4DC80015B33E /* SJNavigationViewController.h */,
-				B213BDA51B9D4DC80015B33E /* SJNavigationViewController.m */,
+				B213BDA41B9D4DC80015B33E /* SJNavigationController.h */,
+				B213BDA51B9D4DC80015B33E /* SJNavigationController.m */,
 				B213BDA61B9D4DC80015B33E /* SJTabBarController.h */,
 				B213BDA71B9D4DC80015B33E /* SJTabBarController.m */,
 				B213BDA81B9D4DC80015B33E /* SJViewController.h */,
@@ -705,7 +705,7 @@
 				B213BE1D1B9D73040015B33E /* ViewConstructUtil.m in Sources */,
 				B213BDB81B9D4DC80015B33E /* SJCollectionViewItem.m in Sources */,
 				B213BE171B9D70610015B33E /* RefreshAnimationView.m in Sources */,
-				B213BDBE1B9D4DC80015B33E /* SJNavigationViewController.m in Sources */,
+				B213BDBE1B9D4DC80015B33E /* SJNavigationController.m in Sources */,
 				B2D363DA1B9C297500F24E11 /* ASIDataCompressor.m in Sources */,
 				B213BDE41B9D61B40015B33E /* HBErrorView.m in Sources */,
 				B213BDE31B9D61B40015B33E /* HBEmptyView.m in Sources */,

@@ -10,7 +10,7 @@
 #import "HBProcessIndicator.h"
 #import "SJTopTipView.h"
 #import <objc/runtime.h>
-#import "SJNavigationViewController.h"
+#import "SJNavigationController.h"
 
 @interface SJViewController ()
 
@@ -191,7 +191,7 @@
  * 返回方法,可自定义重写
  */
 - (void)backView {
-    SJNavigationViewController *navigationViewController = (SJNavigationViewController *)self.navigationController;
+    SJNavigationController *navigationViewController = (SJNavigationController *)self.navigationController;
     [navigationViewController customPopViewController];
     
 //    [self.navigationController popViewControllerAnimated:YES];

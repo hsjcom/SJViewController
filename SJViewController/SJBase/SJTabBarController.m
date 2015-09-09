@@ -7,7 +7,7 @@
 //
 
 #import "SJTabBarController.h"
-#import "SJNavigationViewController.h"
+#import "SJNavigationController.h"
 #import "UITabBarItem+Add.h"
 #import "UIImage+Color.h"
 #import "SJNavAction.h"
@@ -41,11 +41,11 @@
     self.mine = [[MineViewController alloc]initWithQuery:nil];
     
     
-    SJNavigationViewController *navMall = [[SJNavigationViewController alloc]initWithRootViewController:self.mall];
-    SJNavigationViewController *navCategory = [[SJNavigationViewController alloc]initWithRootViewController:self.category];
-    SJNavigationViewController *navShopCart = [[SJNavigationViewController alloc]initWithRootViewController:self.shopCart];
-    SJNavigationViewController *navForum = [[SJNavigationViewController alloc]initWithRootViewController:self.forum];
-    SJNavigationViewController *navMine = [[SJNavigationViewController alloc]initWithRootViewController:self.mine];
+    SJNavigationController *navMall = [[SJNavigationController alloc]initWithRootViewController:self.mall];
+    SJNavigationController *navCategory = [[SJNavigationController alloc]initWithRootViewController:self.category];
+    SJNavigationController *navShopCart = [[SJNavigationController alloc]initWithRootViewController:self.shopCart];
+    SJNavigationController *navForum = [[SJNavigationController alloc]initWithRootViewController:self.forum];
+    SJNavigationController *navMine = [[SJNavigationController alloc]initWithRootViewController:self.mine];
  
 
     navMall.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"商城"   image:@"tab0"selectedImage:@"tab0_up" tag:Tab_Mall];

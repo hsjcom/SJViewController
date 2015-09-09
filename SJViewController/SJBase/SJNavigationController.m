@@ -1,14 +1,14 @@
 //
-//  SJNavigationViewController.m
+//  SJNavigationController.m
 //
 //
 //  Created by Shaojie Hong on 15-1-27.
 //  Copyright (c) 2015年 Shaojie Hong. All rights reserved.
 //
 
-#import "SJNavigationViewController.h"
+#import "SJNavigationController.h"
 
-@interface SJNavigationViewController () {
+@interface SJNavigationController () {
     CGPoint _startTouch;
     UIImageView *_lastScreenShotView;
     UIView *_blackMask;
@@ -23,7 +23,7 @@
 
 
 
-@implementation SJNavigationViewController
+@implementation SJNavigationController
 
 - (void)dealloc {
     self.screenShotsList = nil;

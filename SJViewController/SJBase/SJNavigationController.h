@@ -1,5 +1,5 @@
 //
-//  SJNavigationViewController.h
+//  SJNavigationController.h
 //  
 //
 //  Created by Shaojie Hong on 15-1-27.
@@ -10,7 +10,7 @@
 #import "SJViewController.h"
 
 
-@interface SJNavigationViewController : UINavigationController <UIGestureRecognizerDelegate>
+@interface SJNavigationController : UINavigationController <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *screenShotsList;
 
