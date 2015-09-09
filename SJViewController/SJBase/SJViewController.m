@@ -44,28 +44,26 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    UINavigationBar* navBar = self.navigationController.navigationBar;
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 0);
     
     if([self isRootView] ){
-//        if ([self isKindOfClass:[MallViewController class]]) {
-//            UIImage* img = Isios7()? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
-//            [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
-//
-//        }
-        UIImage *img = IsiOS7()? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
-        [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
-        
+//        UIImage *img = IsiOS7() ? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
+//        [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
         
         [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                         RGBCOLOR(53, 53, 53), NSForegroundColorAttributeName,
-                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], NSShadowAttributeName,
+                                        shadow, NSShadowAttributeName,
                                         [UIFont systemFontOfSize:17],
                                         NSFontAttributeName,
                                         nil]];
     }else{
         [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                         RGBACOLOR(53, 53, 53, 0.5), NSForegroundColorAttributeName,
-                                        [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], NSShadowAttributeName,
+                                        shadow, NSShadowAttributeName,
                                         [UIFont systemFontOfSize:17],
                                         NSFontAttributeName,
                                         nil]];
@@ -129,7 +127,7 @@
         return;
     }
     
-//    if (!Isios7() || self.presentBackBtn){
+//    if (!IsiOS7() || self.presentBackBtn){
         self.navigationItem.backBarButtonItem.enabled = NO;
         
         //取 push 进来的view 的title
@@ -143,11 +141,6 @@
 //                beforeVC = [viewControllers objectAtIndex:index];
 //                backTitle = beforeVC.title;
 //                if(backTitle.length > 4){
-//                    backTitle = @"返回";
-//                }
-//                
-//                //帖子详情有3分栏的segment
-//                if ([[HBNavAction getCurrentViewController] isKindOfClass:NSClassFromString(@"ForumListViewController")] && backTitle.length >= 4) {
 //                    backTitle = @"返回";
 //                }
 //            }
@@ -478,8 +471,6 @@
     self.view.userInteractionEnabled = [self userInteractionEnabledWhenShowIndicator];
     [_loadMsgBox show];
 }
-
-
 
 /*
  * 转圈，userInteractionEnabled = YES;

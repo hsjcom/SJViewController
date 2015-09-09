@@ -69,8 +69,8 @@
 
 + (UIViewController *)pushVCWithName:(NSString*)name andQuery:(NSDictionary *)query andTab:(SJTabState)tab {
     
-    AppDelegate *app =  (AppDelegate *)AppDelegateInstance;
-    app.tabBarController.selectedIndex = tab ;
+    AppDelegate *app = (AppDelegate *)AppDelegateInstance;
+    app.tabBarController.selectedIndex = tab;
     
     return  [SJNavAction pushVCWithName:name andQuery:query];
 }
@@ -139,7 +139,6 @@
  * 确保跳转时单独跳转，防止同时多项点击导致跳转错误
  */
 + (BOOL)ensureRedirectSingleFor:(Class)aClass{
-    
     UIViewController *topController = [SJNavAction getCurrentViewController];
     if (![topController isKindOfClass:aClass]) {//防止同时点击，进而页面跳转出错
         return NO;

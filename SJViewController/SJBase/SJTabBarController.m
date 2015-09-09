@@ -28,13 +28,11 @@
     
     self.delegate = self;
  
-    //设置  UITabBar    UINavigationBar   UIBarButtonItem 样式
+    //设置  UITabBar  UINavigationBar   UIBarButtonItem 样式
     [self setNavigationBarAndTabBarStyle];
-    
 }
 
 -(void)createRootViewControllers{
-    
     /*
     self.mall = [[MallViewController alloc]initWithQuery:nil];
     self.category = [[CategoryViewController alloc]initWithQuery:nil];
@@ -64,7 +62,6 @@
  * 设置  UITabBar    UINavigationBar   UIBarButtonItem 样式
  */
 - (void)setNavigationBarAndTabBarStyle{
-    //===============================================================================
     //设置 底部 tabBar  tabBarItem 按钮 颜色 字体 按下效果 等
     [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:COLOR_NAVBAR_BG]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : COLOR_TEXT_2} forState:UIControlStateNormal];
@@ -77,24 +74,27 @@
         [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_2} forState:UIControlStateHighlighted];
     }
     
-    //去除ios6  底部选择灰框 ======
+    //去除iOS6  底部选择灰框
     [[UITabBar appearance] setSelectionIndicatorImage:[[UIImage alloc] init]];
-    //===============================================================================
-    //设置 UINavigationBar  顶部标题 字体颜色 大小
-    UINavigationBar* navBar = [UINavigationBar appearance];
+    
+    //设置 UINavigationBar 顶部标题 字体颜色 大小
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 0);
+    
+    UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                     COLOR_TEXT_1, NSForegroundColorAttributeName,
-                                    COLOR_TEXT_2, NSShadowAttributeName,
-                                    [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], NSShadowAttributeName,
+                                    shadow, NSShadowAttributeName,
                                     [UIFont systemFontOfSize:17],
                                     NSFontAttributeName,
                                     nil]];
     
-    //设置返回键 按钮 箭头《    nav 背景颜色
+    //设置返回键 按钮 箭头《  nav 背景颜色
     
 //    //获取Navigation Bar的位置和大小
 //    CGSize titleSize = navBar.bounds.size;
-//    UIImage* bgImage = [UIImage imageWithColor:RGBCOLOR(255, 255, 255) size:titleSize];
+//    UIImage *bgImage = [UIImage imageWithColor:RGBCOLOR(255, 255, 255) size:titleSize];
 //    [navBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];  //设置背景
     
     if(IsiOS7()){
@@ -108,7 +108,7 @@
         [navBar setTintColor:COLOR_NAVBAR_BG];
     }
     
-    // 去除nav  top 下面那条黑线 取消  ======
+    // 去除nav  top 下面那条黑线 取消
     [navBar setShadowImage:[[UIImage alloc] init]];
     
     // 黑色时间栏
@@ -121,7 +121,6 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SJTabBarController : UITabBarController<UITabBarControllerDelegate>
+
 - (void)createRootViewControllers;
 
 //tabBar的高度
