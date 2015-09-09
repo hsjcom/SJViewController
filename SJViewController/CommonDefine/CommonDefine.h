@@ -73,6 +73,7 @@ _Pragma("clang diagnostic pop") \
 } while (0)
 
 #define DefaultGrayImgName @"gray.png"
+#define DefaultGrayImage [UIImage imageNamed:@"gray.png"]
 
 #define ShowMessageBoxTime       2
 #define ShowMessageBoxTitle      17
