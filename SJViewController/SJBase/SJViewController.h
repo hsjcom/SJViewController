@@ -39,7 +39,7 @@
 - (BOOL)ensureShowOtherView;
 
 /**
- * 右滑返回， default YES
+ * 右滑返回，default YES
  */
 - (BOOL)canDragBack;
 
@@ -143,25 +143,20 @@
  */
 - (void)showError:(BOOL)show;
 
-/*
+/**
  * 弹框时是否关闭交互
  */
 - (BOOL)userInteractionEnabledWhenShowIndicator;
 
-/*
+/**
  * 黑色提醒，渐显，自适应文本，支持多行，换行，\n 换行
  */
 - (void)showMsg:(NSString *)msg;
 
-/*
- * showMsg同名方法
- */
-- (void)showResult:(NSString *)msg;
-
-/*
+/**
  * 黑色提醒（同上），延后
  */
-- (void)showResultDelay:(NSString *)msg;
+- (void)showMsgDelay:(NSString *)msg;
 
 //黑色提醒(同上)，加载windows
 - (void)showMsgOnWindows:(NSString *)msg;
@@ -169,47 +164,47 @@
 //黑色提醒(同上)，windows层，延后
 - (void)showMsgOnWindowsDelay:(NSString *)msg;
 
-/*
+/**
  * NavigationBar 下面红色提醒，从上往下
  */
 - (void)showHopTip:(NSString *)msg;
 
-/*
+/**
  * 转圈，userInteractionEnabled = [self userInteractionEnabledWhenShowIndicator];
  */
 - (void)showIndicator:(NSString *)msg;
 
-/*
+/**
  * 转圈，userInteractionEnabled = YES;
  */
 - (void)showIndicatorWithUserInteractionEnabled:(NSString *)msg;
 
-/*
+/**
  * 关闭转圈
  */
 - (void)endIndicator;
 
-/*
+/**
  * diamiss关闭转圈
  */
 - (void)endIndicatorDelay;
 
-/*
+/**
  * endIndicatorDelay同名方法
  */
 - (void)endProcessDelay;
 
-/*
+/**
  * 关闭转圈，并显示okIcon和msg
  */
 - (void)endIndicatorWithIconAndMsg:(NSString *)msg;
 
-/*
+/**
  * 关闭转圈，并显示msg
  */
 - (void)endIndicator:(NSString *)msg;
 
-/*
+/**
  * 关闭转圈，并显示title，subTitle，不同字体
  */
 - (void)endIndicator:(NSString *)title subTitle:(NSString *)subTitle;

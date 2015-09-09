@@ -426,15 +426,10 @@
     [tip showMessage];
 }
 
-//showMsg同名方法
-- (void)showResult:(NSString *)msg {
-    [self showMsg:msg];
-}
-
 //黑色提醒（同上），延后
-- (void)showResultDelay:(NSString *)msg {
+- (void)showMsgDelay:(NSString *)msg {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self showResult:msg];
+        [self showMsg:msg];
     });
 }
 
