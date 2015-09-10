@@ -59,6 +59,16 @@
     CGContextAddArc(context, self.bounds.size.width / 2, self.bounds.size.height / 2, self.bounds.size.width / 2 - 3, startAngle, startAngle + step, 0);
     //    CGContextDrawPath(context, kCGPathStroke);
     CGContextStrokePath(context);
+    
+    //不完整圆
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetLineWidth(context, 2.0);
+//    CGContextSetLineCap(context, kCGLineCapRound);
+//    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+//    CGFloat startAngle = - M_PI / 3;
+//    CGFloat step = 11 * M_PI / 6 * self.progress;
+//    CGContextAddArc(context, self.bounds.size.width / 2, self.bounds.size.height / 2, self.bounds.size.width / 2 - 3, startAngle, startAngle+step, 0);
+//    CGContextStrokePath(context);
 }
 
 - (void)pullingAnimation:(float)progress {
@@ -77,6 +87,9 @@
     rotate.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
 
     [_refreshLoadingView.layer addAnimation:rotate forKey:@"rotateAnimation"];
+    
+    //不完整圆转圈
+//    [self.layer addAnimation:rotate forKey:@"rotateAnimation"];
 }
 
 - (void)startLoadingAnimation {
@@ -87,6 +100,8 @@
 - (void)stopLoadingAnimation {
     _refreshLoadingView.hidden = YES;
     [_refreshLoadingView.layer removeAllAnimations];
+    
+//    [self.layer removeAllAnimations];
 }
 
 @end

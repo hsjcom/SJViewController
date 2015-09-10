@@ -15,11 +15,11 @@
 
 + (void)toRootVCWithTab:(SJTabState)tab andQuery:(NSDictionary *)quey;
 
-+ (UIViewController *)pushVCWithName:(NSString*)name andQuery:(NSDictionary *)query;
++ (UIViewController *)pushVCWithName:(NSString *)name andQuery:(NSDictionary *)query;
 
 + (UIViewController *)presentVCWithName:(NSString *)name andQuery:(NSDictionary *)query;
 
-+ (UIViewController *)pushVCWithName:(NSString*)name andQuery:(NSDictionary *)query andTab:(SJTabState)tab;
++ (UIViewController *)pushVCWithName:(NSString *)name andQuery:(NSDictionary *)query andTab:(SJTabState)tab;
 
 //用于返回UIViewController,前一个页面可以使用
 + (UIViewController *)pushVCWithName:(NSString *)name andQuery:(NSDictionary *)query animated:(BOOL)animated;

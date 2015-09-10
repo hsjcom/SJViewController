@@ -227,6 +227,7 @@
     btn.backgroundColor = [UIColor clearColor];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = item;
+    self.navigationItem.leftBarButtonItem.width = IsiOS7() ? -5 : -10;
 }
 
 /**

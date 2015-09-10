@@ -101,7 +101,7 @@
  */
 + (UIViewController *)getCurrentViewController {
     UIViewController *result = nil;
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     if (window.windowLevel != UIWindowLevelNormal) {
         NSArray *windows = [[UIApplication sharedApplication] windows];
         for(UIWindow *tmpWin in windows){
@@ -125,12 +125,15 @@
     /*
      *
      */
-    if ([result isKindOfClass:[SJTabBarController class]]) {
-        SJTabBarController *tabBarController = (SJTabBarController *)result;
+    if ([result isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBarController = (UITabBarController *)result;
         if ([tabBarController.selectedViewController isKindOfClass:[UINavigationController class]]) {
             UINavigationController *navigationController = (UINavigationController *)tabBarController.selectedViewController;
             result = navigationController.topViewController;
         }
+    } else if ([result isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)result;
+        result = navigationController.topViewController;
     }
     return result;
 }
