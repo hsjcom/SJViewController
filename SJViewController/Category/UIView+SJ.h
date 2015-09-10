@@ -1,5 +1,5 @@
 //
-//  UIView+HB.h
+//  UIView+SJ.h
 //  
 //
 //  Created by Soldier on 15-2-6.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (HB)
+@interface UIView (SJ)
 
 /**
  * Shortcut for frame.origin.x.

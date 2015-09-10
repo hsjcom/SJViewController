@@ -18,13 +18,15 @@
 #import "CommonDefine.h"
 
 #import "UIImage+Color.h"
-#import "SJNavAction.h"
-#import "UIView+HB.h"
+#import "UIView+SJ.h"
+#import "NSArray+SJ.h"
+#import "NSDictionary+SJ.h"
 
 #import "StringUtil.h"
 #import "ViewConstructUtil.h"
 #import "ColorUtil.h"
 
+#import "SJNavAction.h"
 #import "JSONKit.h"
 
 

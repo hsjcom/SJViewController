@@ -1,14 +1,14 @@
 //
-//  UIView+HB.m
+//  UIView+SJ.m
 //  
 //
 //  Created by Soldier on 15-2-6.
 //  Copyright (c) 2015年 Shaojie Hong. All rights reserved.
 //
 
-#import "UIView+HB.h"
+#import "UIView+SJ.h"
 
-@implementation UIView (HB)
+@implementation UIView (SJ)
 
 - (CGFloat)left {
     return self.frame.origin.x;
