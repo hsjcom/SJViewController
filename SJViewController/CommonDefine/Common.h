@@ -25,6 +25,7 @@
 #import "StringUtil.h"
 #import "ViewConstructUtil.h"
 #import "ColorUtil.h"
+#import "ImageUtil.h"
 
 #import "SJNavAction.h"
 #import "JSONKit.h"

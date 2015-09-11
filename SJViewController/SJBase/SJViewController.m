@@ -44,36 +44,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-    shadow.shadowOffset = CGSizeMake(0, 0);
-    
-    if([self isRootView] ){
-//        UIImage *img = IsiOS7() ? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
-//        [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
-        
-        [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        RGBCOLOR(53, 53, 53), NSForegroundColorAttributeName,
-                                        shadow, NSShadowAttributeName,
-                                        [UIFont systemFontOfSize:17],
-                                        NSFontAttributeName,
-                                        nil]];
-    }else{
-        [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        RGBACOLOR(53, 53, 53, 0.5), NSForegroundColorAttributeName,
-                                        shadow, NSShadowAttributeName,
-                                        [UIFont systemFontOfSize:17],
-                                        NSFontAttributeName,
-                                        nil]];
-    }
+    [self constructNavbar];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self reSetNavbar];
 }
 
 - (void)viewDidLoad {
@@ -100,6 +77,38 @@
     self.view.bounds = viewBounds;
     
     [self constructBackBtn];
+}
+
+- (void)constructNavbar{
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 0);
+    
+    if([self isRootView] ){
+//        UIImage *img = IsiOS7() ? [UIImage imageNamed:@"navBarBg64"] : [UIImage imageNamed:@"navBarBg44"];
+//        [self.navigationController.navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
+//        [self.navigationController.navigationBar setBackgroundImage:[ImageUtil createImageWithColor:[self navigationBarColor]] forBarMetrics:UIBarMetricsDefault];
+        
+        [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                        RGBCOLOR(53, 53, 53), NSForegroundColorAttributeName,
+                                        shadow, NSShadowAttributeName,
+                                        [UIFont systemFontOfSize:18],
+                                        NSFontAttributeName,
+                                        nil]];
+    }else{
+        [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                        RGBACOLOR(53, 53, 53, 0.5), NSForegroundColorAttributeName,
+                                        shadow, NSShadowAttributeName,
+                                        [UIFont systemFontOfSize:18],
+                                        NSFontAttributeName,
+                                        nil]];
+    }
+}
+
+- (void)reSetNavbar {
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
 }
 
 /**
@@ -295,7 +304,7 @@
 }
 
 - (UIColor *)navigationBarColor {
-    return RGBCOLOR(53, 53, 53);
+    return [UIColor whiteColor];
 }
 
 - (UIColor *)backgroundColor {
