@@ -67,7 +67,7 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : COLOR_TEXT_2} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_1} forState:UIControlStateSelected];
     
-    //设置 barButton  按钮 颜色 字体 按下效果 等
+    //设置 barButton 按钮 颜色 字体 按下效果 等
     UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
     if(IsiOS7()){
         [barButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_1} forState:UIControlStateNormal];

@@ -86,14 +86,14 @@
         [self.screenShotsList addObject:capturedImage];
         
         //* HBMultiSelectPhotoViewController  中间会插入HBAlbumsPickerController
-        if ([viewController isKindOfClass:NSClassFromString(@"HBMultiSelectPhotoViewController")]) {
-            [self.screenShotsList addObject:capturedImage];
-        }
+//        if ([viewController isKindOfClass:NSClassFromString(@"HBMultiSelectPhotoViewController")]) {
+//            [self.screenShotsList addObject:capturedImage];
+//        }
     }
     
     if (IsiOS7()) {
         [super pushViewController:viewController animated:NO];
-        //    5 大主页面 push 时不执行动画
+        //tab主页面 push 时不执行动画
         UIViewController* root = [self.viewControllers objectAtIndex:0];
         if (![root isEqual:viewController] && animated) {
             CATransition *transition = [CATransition animation];

@@ -42,7 +42,7 @@
 
 //用于返回UIViewController,前一个页面可以使用
 + (UIViewController *)pushVCWithName:(NSString *)name andQuery:(NSDictionary *)query animated:(BOOL)animated {
-    // 参数 判断  String +
+    // 参数 判断 String +
     UIViewController *topController = [SJNavAction getCurrentViewController];
     SJViewController *controller = [[NSClassFromString(name) alloc] initWithQuery:query];
     if (controller) {
@@ -67,7 +67,7 @@
     }
 }
 
-+ (UIViewController *)pushVCWithName:(NSString*)name andQuery:(NSDictionary *)query andTab:(SJTabState)tab {
++ (UIViewController *)pushVCWithName:(NSString *)name andQuery:(NSDictionary *)query andTab:(SJTabState)tab {
     
     AppDelegate *app = (AppDelegate *)AppDelegateInstance;
     app.tabBarController.selectedIndex = tab;
