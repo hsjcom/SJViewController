@@ -55,9 +55,7 @@
     
     // 返回新的改变大小后的图片
     return scaledImage;
-    
 }
-
 
 //截取部分图像
 + (UIImage *)getSubImage:(UIImage *)image size:(CGSize)size {
@@ -146,7 +144,6 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
     
-    
     CGFloat minx = CGRectGetMinX(rect);
     CGFloat midx = CGRectGetMidX(rect);
     CGFloat maxx = CGRectGetMaxX(rect);
@@ -200,7 +197,6 @@
     return theImage;
 }
 
-
 /* blur the current image with a box blur algoritm */
 + (UIImage *)blurryImage:(UIImage *)originalImg withBlurLevel:(CGFloat)blur {
     if ((blur < 0.0f) || (blur > 1.0f)) {
@@ -235,7 +231,6 @@
             0, 0, boxSize, boxSize, NULL,
             kvImageEdgeExtend);
 
-
     if (error) {
         
     }
@@ -262,7 +257,6 @@
 
     return returnImage;
 }
-
 
 + (void)circleImgAction:(UIImageView *)view {
     CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
