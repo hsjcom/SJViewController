@@ -56,7 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    // ios 7 以上需要设置背景色后才可以支持 右滑动返回
+    // iOS7 以上需要设置背景色后才可以支持 右滑动返回
     [self.view setBackgroundColor:[self backgroundColor]];
     
     // 设置后 UIview 的frame y就不是从navbar下开始
@@ -112,21 +112,21 @@
 }
 
 /**
- * 判断是否是5大首页
+ * 判断是否是tab首页
  */
 - (BOOL)isRootView{
     return NO;
 }
 
 /**
- * 右滑返回， default YES
+ * 右滑返回，default YES
  */
 - (BOOL)canDragBack {
     return YES;
 }
 
 /**
- * 创建返回 按钮  ios 6 7 区分
+ * 创建返回按钮
  */
 - (void)constructBackBtn{
     /**
@@ -328,7 +328,7 @@
 }
 
 
-#pragma mark ============== Other View =====================
+#pragma mark - Other View
 
 - (HBEmptyView *)emptyView{
     if (!_emptyView) {
@@ -418,9 +418,6 @@
 
 
 #pragma mark - 弹出框
-/*
- * by Soldier,2015.3.4
- */
 
 //弹框时是否关闭交互
 - (BOOL)userInteractionEnabledWhenShowIndicator {
@@ -559,7 +556,7 @@
 - (void)showStatusBar:(id)show {
 }
 
-#pragma tabClickrefreshData 双击tab刷新方法
+#pragma - tabClickrefreshData 双击tab刷新方法
 
 - (void)tabClickrefreshData {
 }
@@ -576,7 +573,7 @@
     if (!vc) {
         return nil;
     }
-    const char *className  = class_getName(vc.class);
+    const char *className = class_getName(vc.class);
     NSString *resultName = [NSString stringWithCString:className encoding:NSUTF8StringEncoding];
     
     return resultName;

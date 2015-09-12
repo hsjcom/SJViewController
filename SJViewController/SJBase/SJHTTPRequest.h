@@ -42,7 +42,9 @@
  */
 - (void)addSelectFinish:(SEL)finishSelector andDidFailSelector:(SEL)failSelector;
 
-//同步请求
+/**
+ * 同步请求
+ */
 - (void)sendSynchronousRequest;
 
 /**

@@ -75,7 +75,7 @@
 }
 
 /*
- *  上拉更多结束时， TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
+ *  上拉更多结束时，TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
  *  default:_loadMoreEnable即有上拉刷新时有值  NO TableView的contentInset.bottom值为0   YES   TableView的contentInset.bottom值为CLLRefreshFooterViewHeight
  */
 -(BOOL)loadMoreHaveBottomInset{
@@ -111,7 +111,6 @@
         [_tableView reloadData];
     }
 }
-
 
 - (void)didFinishLoad:(SJHTTPRequest *)request {
     [super didFinishLoad:request];
@@ -201,7 +200,7 @@
 - (void)didEndDragging{
 }
 
-#pragma mark  ========================          CoverView         ========================
+#pragma mark - CoverView
 
 - (void)addCoverOnTableView {
     _upCoverCtl = [[UIControl alloc] initWithFrame:CGRectZero];
@@ -234,7 +233,6 @@
         _upCoverCtl.frame = CGRectMake(0, tableTop, UI_SCREEN_WIDTH , cellFrame.origin.y - tableTop);
     }
     
-    
     CGFloat bottomTop = cellFrame.origin.y + cellFrame.size.height;
     if (cellFrame.origin.y > self.tableView.bottom) {
         _downCoverCtl.frame = CGRectZero;
@@ -252,7 +250,6 @@
 }
 
 - (void)clickToOutEditForCellReset {
-
 }
 
 

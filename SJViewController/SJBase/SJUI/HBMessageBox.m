@@ -10,6 +10,7 @@
 #import "SJBounceAnimation.h"
 
 @implementation HBMessageBox
+
 @synthesize msgLabel = _msgLabel;
 @synthesize titleLabel = _titleLabel;
 @synthesize canBack = _canBack;

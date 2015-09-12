@@ -10,6 +10,7 @@
 #import "SJCollectionViewItem.h"
 
 @implementation SJCollectionViewCell
+
 - (void)dealloc {
     [self setObject:nil];
 }

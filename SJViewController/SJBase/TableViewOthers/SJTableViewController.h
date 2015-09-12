@@ -95,10 +95,10 @@
 - (BOOL)draggingNeedLoadMore;
 
 /*
- *  上拉更多结束时， TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
+ *  上拉更多结束时，TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
  *  default:_loadMoreEnable即有上拉刷新时有值  NO TableView的contentInset.bottom值为0   YES   TableView的contentInset.bottom值为CLLRefreshFooterViewHeight
  */
--(BOOL)loadMoreHaveBottomInset;
+- (BOOL)loadMoreHaveBottomInset;
 
 
 @end

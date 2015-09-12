@@ -9,6 +9,7 @@
 #import "HBErrorView.h"
 
 @implementation HBErrorView
+
 @synthesize delegate;
 
 - (void)dealloc{
@@ -42,7 +43,6 @@
        btnYPadding:20];
 
 }
-
 
 - (void)refresh{
     SafeCallSelector(delegate, @selector(refreshBtnClicked));

@@ -64,7 +64,7 @@
 - (void)setNavigationBarAndTabBarStyle{
     //设置 底部 tabBar  tabBarItem 按钮 颜色 字体 按下效果 等
     [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:COLOR_NAVBAR_BG]];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : COLOR_TEXT_2} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_2} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_TEXT_1} forState:UIControlStateSelected];
     
     //设置 barButton 按钮 颜色 字体 按下效果 等
@@ -90,7 +90,7 @@
                                     NSFontAttributeName,
                                     nil]];
     
-    //设置返回键 按钮 箭头《  nav 背景颜色
+    //设置返回键 按钮 箭头《 nav 背景颜色
     
 //    //获取Navigation Bar的位置和大小
 //    CGSize titleSize = navBar.bounds.size;

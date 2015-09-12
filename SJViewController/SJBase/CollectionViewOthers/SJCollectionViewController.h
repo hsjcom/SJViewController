@@ -20,7 +20,7 @@
 @property(nonatomic, assign) int page;
 @property(nonatomic, assign) BOOL loadMoreEnable;
 @property(nonatomic, assign) BOOL loadRefreshEnable;
-@property (nonatomic, strong) CLLRefreshHeadController *refreshControll;
+@property(nonatomic, strong) CLLRefreshHeadController *refreshControll;
 
 - (UICollectionView *)collectionView;
 
@@ -28,7 +28,8 @@
 
 - (CGRect)collectionViewFrame;
 
-#pragma mark  - layout  -
+#pragma mark  - layout  
+
 //设置collectionView的前后左右的间距
 - (UIEdgeInsets)layoutEdgeInsets;
 
@@ -42,7 +43,8 @@
 - (CGFloat)YPadding;
 
 
-#pragma mark- muti custom
+#pragma mark - muti custom
+
 - (NSMutableArray *)layoutEdgeInsetsMuti;
 
 //设置collectionView的内容有几列
@@ -54,7 +56,7 @@
 //行间距
 - (NSMutableArray *)YPaddingMuti;
 
-#pragma mark  - layout  -
+#pragma mark - layout
 
 - (void)createDataSource;
 

@@ -24,8 +24,7 @@
 
 @implementation SJCollectionViewLayout
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self sharedInit];
@@ -33,8 +32,7 @@
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self sharedInit];
@@ -42,8 +40,7 @@
     return self;
 }
 
-- (void)sharedInit
-{
+- (void)sharedInit {
     _numberOfItemsPerLines = [NSMutableArray arrayWithObject:@1];
     _sectionInsets = [NSMutableArray arrayWithObject:NSStringFromUIEdgeInsets(UIEdgeInsetsZero)];
     _XSpacings = [NSMutableArray arrayWithObject:@0.f];
@@ -53,8 +50,7 @@
 #pragma mark - rewrite method
 
 //重载方法
-- (void)prepareLayout
-{
+- (void)prepareLayout {
     //初始化
     [super prepareLayout];
     
@@ -87,8 +83,7 @@
         [self.columnHeights addObject:columHeightsOfSection];
     }
     
-    for (NSInteger section = 0; section < numberOfSections; ++section)
-    {
+    for (NSInteger section = 0; section < numberOfSections; ++section) {
         CGFloat topForColumn = 0.f;
         CGFloat topOfSection = [self topOfSection:section];
         UIEdgeInsets sectionInset = [self sectionInset:section];
@@ -97,17 +92,13 @@
          * 1. Section header
          */
         CGFloat headerHeight;
-        if ([self.aDelegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)])
-        {
+        if ([self.aDelegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
             headerHeight = [self.aDelegate collectionView:self.collectionView layout:self heightForHeaderInSection:section];
-        }
-        else
-        {
+        } else {
             headerHeight = 0.f;
         }
         
-        if (headerHeight > 0)
-        {
+        if (headerHeight > 0) {
             attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:SJCollectionViewHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
             attributes.frame = CGRectMake(0, topOfSection, self.collectionView.frame.size.width, headerHeight);
             [self.headerAttributes addObject:attributes];
@@ -119,8 +110,7 @@
         topForColumn += sectionInset.top;
         
         NSMutableArray *tmpHeights = [self columnHeights:section];
-        for (idx = 0; idx < tmpHeights.count; idx++)
-        {
+        for (idx = 0; idx < tmpHeights.count; idx++) {
             tmpHeights[idx] = @(topForColumn);
         }
         
@@ -131,8 +121,7 @@
         NSMutableArray *itemAttributes = [NSMutableArray arrayWithCapacity:itemCount];
         
         // Item will be put into shortest column.
-        for (idx = 0; idx < itemCount; idx++)
-        {
+        for (idx = 0; idx < itemCount; idx++) {
             //size
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:section];
             CGFloat itemWidth = [self itemWidth:section];
@@ -170,17 +159,13 @@
         CGFloat footerHeight;
         topForColumn = sectionInset.bottom + [self longestColumnHeightSection:section];
         
-        if ([self.aDelegate respondsToSelector:@selector(collectionView:layout:heightForFooterInSection:)])
-        {
+        if ([self.aDelegate respondsToSelector:@selector(collectionView:layout:heightForFooterInSection:)]) {
             footerHeight = [self.aDelegate collectionView:self.collectionView layout:self heightForFooterInSection:section];
-        }
-        else
-        {
+        } else {
             footerHeight = 0.f;
         }
         
-        if (footerHeight > 0)
-        {
+        if (footerHeight > 0) {
             attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:SJCollectionViewFooter withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
             CGFloat top = topForColumn + topOfSection;
             attributes.frame = CGRectMake(0, top, self.collectionView.frame.size.width, footerHeight);
@@ -192,21 +177,17 @@
         }
         
         //save data
-        for (idx = 0; idx < tmpHeights.count; idx++)
-        {
+        for (idx = 0; idx < tmpHeights.count; idx++) {
             tmpHeights[idx] = @(topForColumn);
         }
     }
-    
 }
 
 //重载方法
 //返回collectionView的内容的尺寸
-- (CGSize)collectionViewContentSize
-{
+- (CGSize)collectionViewContentSize {
     NSInteger numberOfSections = [self.collectionView numberOfSections];
-    if (numberOfSections == 0)
-    {
+    if (numberOfSections == 0) {
         return CGSizeZero;
     }
     
@@ -223,14 +204,11 @@
 
 //重载方法
 //返回对应于indexPath的位置的cell的布局属性
-- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)path
-{
-    if (path.section >= [self.sectionItemAttributes count])
-    {
+- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)path {
+    if (path.section >= [self.sectionItemAttributes count]) {
         return nil;
     }
-    if (path.item >= [self.sectionItemAttributes[path.section] count])
-    {
+    if (path.item >= [self.sectionItemAttributes[path.section] count]) {
         return nil;
     }
     
@@ -239,15 +217,13 @@
 
 //重载方法
 //返回对应于indexPath的位置的追加视图的布局属性，如果没有追加视图可不重载
-- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewLayoutAttributes *attribute = nil;
-    if ([kind isEqualToString:SJCollectionViewHeader])
-    {
+    if ([kind isEqualToString:SJCollectionViewHeader]) {
         NSUInteger index = indexPath.section;
         attribute = [self.headerAttributes objectAtIndex:index];
-    } else if ([kind isEqualToString:SJCollectionViewFooter])
-    {
+        
+    } else if ([kind isEqualToString:SJCollectionViewFooter]) {
         NSUInteger index = indexPath.section;
         attribute = [self.footerAttrubites objectAtIndex:index];
     }
@@ -257,8 +233,7 @@
 //重载方法
 //返回rect中的所有的元素的布局属性
 //返回的是包含UICollectionViewLayoutAttributes的NSArray
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
-{
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSMutableArray *visibleAttributes = [NSMutableArray array];
     for (UICollectionViewLayoutAttributes *attributes in self.allItemAttributes) {
         if (CGRectIntersectsRect(rect, attributes.frame)) {
@@ -272,8 +247,7 @@
 
 //重载方法
 //当边界发生改变时，是否应该刷新布局。如果YES则在边界变化（一般是scroll到其他地方）时，将重新计算需要的布局信息。
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
-{
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     CGRect oldBounds = self.collectionView.bounds;
     if (CGRectGetWidth(newBounds) != CGRectGetWidth(oldBounds) ||
         CGRectGetHeight(newBounds) != CGRectGetHeight(oldBounds))
@@ -290,8 +264,7 @@
  *
  *  @return index for the shortest column
  */
-- (NSUInteger)shortestColumnIndex:(NSUInteger)section
-{
+- (NSUInteger)shortestColumnIndex:(NSUInteger)section {
     __block NSUInteger index = 0;
     __block CGFloat resultHeight = MAXFLOAT;
     
@@ -364,6 +337,7 @@
 }
 
 #pragma mark - Public Accessors
+
 - (void)setNumberOfItemsPerLines:(NSMutableArray *)numberOfItemsPerLines
 {
     if (_numberOfItemsPerLines != numberOfItemsPerLines) {
@@ -399,8 +373,7 @@
     return num.floatValue;
 }
 
-- (void)setYSpacings:(NSMutableArray *)lineSpacings
-{
+- (void)setYSpacings:(NSMutableArray *)lineSpacings {
     if (_YSpacings != lineSpacings) {
         _YSpacings = lineSpacings;
         
@@ -417,8 +390,7 @@
     return num.floatValue;
 }
 
-- (void)setSectionInsets:(NSMutableArray *)sectionInsets
-{
+- (void)setSectionInsets:(NSMutableArray *)sectionInsets {
     if (_sectionInsets != sectionInsets)
     {
         _sectionInsets = sectionInsets;
@@ -436,8 +408,7 @@
     return sectionInset;
 }
 
-- (NSMutableArray *)columnHeights
-{
+- (NSMutableArray *)columnHeights {
     if (!_columnHeights)
     {
         _columnHeights = [NSMutableArray array];
@@ -466,8 +437,7 @@
     return num.floatValue;
 }
 
-- (NSMutableArray *)allItemAttributes
-{
+- (NSMutableArray *)allItemAttributes {
     if (!_allItemAttributes)
     {
         _allItemAttributes = [NSMutableArray array];
@@ -475,8 +445,7 @@
     return _allItemAttributes;
 }
 
-- (NSMutableArray *)sectionItemAttributes
-{
+- (NSMutableArray *)sectionItemAttributes {
     if (!_sectionItemAttributes)
     {
         _sectionItemAttributes = [NSMutableArray array];
@@ -488,6 +457,4 @@
 
 @end
 
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com 
+

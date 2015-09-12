@@ -38,7 +38,8 @@
 + (SJCollectionViewDataSource *)dataSourceWithMutiItems:(NSMutableArray *)items;
 
 
-#pragma mark ------------header
+#pragma mark - header
+
 //header头视图
 - (SJCollectionViewHeaderView *)headerView;
 

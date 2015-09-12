@@ -11,8 +11,7 @@
 
 @implementation SJCollectionViewFooterView
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         
@@ -23,6 +22,7 @@
 - (id)object {
     return _object;
 }
+
 - (void)setObject:(id)object {
     if (object != _object) {
         _object = object;

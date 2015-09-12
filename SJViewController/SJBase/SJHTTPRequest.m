@@ -148,7 +148,9 @@
     [self addPostValue:value forKey:key];
 }
 
-//同步请求
+/**
+ * 同步请求
+ */
 - (void)sendSynchronousRequest{
     self.startTime = [[NSDate date] timeIntervalSince1970];
     [self startSynchronous];

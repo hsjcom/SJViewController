@@ -154,8 +154,9 @@
 }
 
 
-#pragma mark SJCollectionViewLayoutDelegate
-#pragma mark ------------header
+#pragma mark - SJCollectionViewLayoutDelegate
+#pragma mark - header
+
 //header头视图
 - (SJCollectionViewHeaderView *)headerView{
     return [self headerViewForSection:0];
@@ -187,7 +188,7 @@
 }
 
 
-#pragma mark ------------header
+#pragma mark - footer
 //footer视图
 - (SJCollectionViewFooterView *)footerView{
     return [self footerViewForSection:0];
@@ -245,11 +246,9 @@
               withReuseIdentifier:className];
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableView = nil;
-    if ([kind isEqualToString:SJCollectionViewHeader])
-    {
+    if ([kind isEqualToString:SJCollectionViewHeader]) {
         Class headerClass = [self headerClassForSection:indexPath.section collectionView:collectionView];
         NSString *className = [StringUtil className:headerClass];
         [self registerHeaderIdentifierForView:collectionView headerClass:headerClass];

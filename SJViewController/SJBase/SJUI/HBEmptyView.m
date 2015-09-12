@@ -84,7 +84,6 @@ const static CGFloat defaultButtongPadding = 20.f;
        btnYPadding:defaultButtongPadding];
 }
 
-
 - (void)setImage:(UIImage *)image
        labelText:(NSString *)labelText
    labelYPadding:(CGFloat)labelPadding
