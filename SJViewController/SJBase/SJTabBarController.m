@@ -53,9 +53,30 @@
     navForum.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"社区"   image:@"tab2"selectedImage:@"tab2_up" tag:Tab_Fourm];
     navShopCart.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"购物车" image:@"tab3"selectedImage:@"tab3_up" tag:Tab_ShopCart];
     navMine.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"我"     image:@"tab4"selectedImage:@"tab4_up" tag:Tab_Mine];
+     
+     _redDotViewMe = [[UIView alloc]initWithFrame:CGRectMake(0, 3, 8, 8)];
+     _redDotViewMe = self.tabBar.centerX+ GTFixWidthFlaotIpad(140) + (Isipad()? 15:0) ;
+     [_redDotViewMe setBackgroundColor:[UIColor redColor]];
+     _redDotViewMe.layer.masksToBounds = YES;
+     _redDotViewMe.layer.cornerRadius = redDotViewMe.frame.size.width / 2.0;
+     [_redDotViewMe setHidden:YES];
+     [self.tabBar addSubview:_redDotViewMe];
     
     [self setViewControllers:@[navMall,navCategory,navForum,navShopCart,navMine]];
      */
+}
+
+/**
+ * tabbar 红点设置
+ */
+-(void)showRedDotView:(SJTabState)tab isShow:(BOOL)show{
+    if (tab == Tab_Mine){
+        if (show) {
+            [_redDotViewMe setHidden:NO];
+        }else{
+            [_redDotViewMe setHidden:YES];
+        }
+    }
 }
 
 /**

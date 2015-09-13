@@ -13,9 +13,9 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import "AppDelegate.h"
-
 #import "CommonDefine.h"
+
+#import "AppDelegate.h"
 
 #import "UIImage+Color.h"
 #import "UIView+SJ.h"

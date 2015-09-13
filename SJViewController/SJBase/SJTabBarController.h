@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SJTabBarController : UITabBarController<UITabBarControllerDelegate>
+@interface SJTabBarController : UITabBarController<UITabBarControllerDelegate> {
+    UIView *_redDotViewMe;
+}
+
+/**
+ * tabbar 红点设置
+ */
+-(void)showRedDotView:(SJTabState)tab isShow:(BOOL)show;
 
 - (void)createRootViewControllers;
 
