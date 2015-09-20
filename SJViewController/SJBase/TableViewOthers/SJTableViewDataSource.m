@@ -105,6 +105,10 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+
 #pragma mark -
 
 
@@ -130,10 +134,6 @@
     if (objectIndex != NSNotFound) {
         return [NSIndexPath indexPathForRow:objectIndex inSection:0];
     }
-    return nil;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return nil;
 }
 
