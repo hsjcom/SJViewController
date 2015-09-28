@@ -101,7 +101,6 @@
 
 /*
  * 获取对应key的值
- * by hyk
  */
 + (id)getValue:(NSString *)key {
     NSDictionary *dict = [UserDefaultsUtils getValue:USER_INFO];
@@ -117,7 +116,6 @@
 
 /*
  * 获取昵称
- * by hyk
  */
 + (NSString *)getNickname {
     return [self getValue:NICKNAME];
@@ -133,7 +131,6 @@
 
 /*
  * 获取AccountId
- * by hyk
  */
 + (NSString *)getAccountId {
     NSString *accountId = [self getValue:ACCOUNT_ID];
