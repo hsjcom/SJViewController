@@ -248,7 +248,7 @@
 
 - (CLLRefreshFooterView *)refreshFooterView {
     if (!_refreshFooterView) {
-        _refreshFooterView = [[CLLRefreshFooterView alloc] initWithFrame:CGRectMake(0, self.scrollView.contentSize.height, CGRectGetWidth([[UIScreen mainScreen] bounds]), CLLRefreshFooterViewHeight)];
+        _refreshFooterView = [[CLLRefreshFooterView alloc] initWithFrame:CGRectMake(0, self.scrollView.contentSize.height, self.scrollView.width, CLLRefreshFooterViewHeight)];
         _refreshFooterView.backgroundColor = [UIColor clearColor];
         [self.scrollView addSubview:_refreshFooterView];
         self.loadMoreState = CLLLoadMoreStateNormal;
@@ -258,7 +258,7 @@
 
 - (CLLRefreshHeadView *)refreshHeadView {
     if (!_refreshHeadView) {
-        _refreshHeadView = [[CLLRefreshHeadView alloc] initWithFrame:CGRectMake(0, (self.refreshViewLayerType == CLLRefreshViewLayerTypeOnScrollViews? - CLLDefaultRefreshTotalPixels : self.originalTopInset), CGRectGetWidth([[UIScreen mainScreen] bounds]), CLLDefaultRefreshTotalPixels)];
+        _refreshHeadView = [[CLLRefreshHeadView alloc] initWithFrame:CGRectMake(0, (self.refreshViewLayerType == CLLRefreshViewLayerTypeOnScrollViews? - CLLDefaultRefreshTotalPixels : self.originalTopInset), self.scrollView.width, CLLDefaultRefreshTotalPixels)];
         _refreshHeadView.backgroundColor = [UIColor clearColor];
         _refreshHeadView.circleView.progress = 0;
     }
