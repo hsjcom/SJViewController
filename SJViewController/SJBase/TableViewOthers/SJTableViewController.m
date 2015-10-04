@@ -128,7 +128,7 @@
     
     [self createDataSource];
     
-    [self handleWhenLessOnePage];
+    [self handleLoadMoreEnable];
     [self handleWhenNoneData];
     
     [self setPullEndStatus];
@@ -155,7 +155,7 @@
     
 }
 
-- (void)handleWhenLessOnePage {
+- (void)handleLoadMoreEnable {
     if (self.items.count < 12 || self.newItemsCount <= 0) {
         [self setLoadMoreEnable:NO];
     }else{

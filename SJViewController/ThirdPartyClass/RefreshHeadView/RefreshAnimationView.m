@@ -88,8 +88,8 @@
 
     [_refreshLoadingView.layer addAnimation:rotate forKey:@"rotateAnimation"];
     
-    //不完整圆转圈
-//    [self.layer addAnimation:rotate forKey:@"rotateAnimation"];
+    //转圈
+    [self.layer addAnimation:rotate forKey:@"rotateAnimation"];
 }
 
 - (void)startLoadingAnimation {
@@ -101,7 +101,7 @@
     _refreshLoadingView.hidden = YES;
     [_refreshLoadingView.layer removeAllAnimations];
     
-//    [self.layer removeAllAnimations];
+    [self.layer removeAllAnimations];
 }
 
 @end
