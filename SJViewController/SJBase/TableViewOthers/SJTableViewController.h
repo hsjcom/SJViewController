@@ -69,8 +69,7 @@
 //控制是否下拉刷新
 - (void)setLoadRefreshEnable:(BOOL)loadRefreshEnable;
 
-//每页item数少于limit处理方法
-- (void)handleWhenLessOnePage;
+- (void)handleLoadMoreEnable;
 
 //如果无数据则进行处理
 - (void)handleWhenNoneData;
