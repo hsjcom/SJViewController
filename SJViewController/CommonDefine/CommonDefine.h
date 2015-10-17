@@ -79,6 +79,17 @@ _Pragma("clang diagnostic pop") \
 #define ShowMessageBoxTitle      17
 #define ShowMessageBoxContent    15
 
+
+#define MALE_TYPE @"1"
+#define FEMALE_TYPE @"2"
+
+#define STRING_NO @"0"
+#define STRING_YES @"1"
+
+#define WEB_URL_KEY @"WEB_URL_KEY"
+
+
+
 //图片渐显动画出现的时间
 #define ImgAppearTime 0.4
 #define ImgDisAppearTime 0.4

@@ -90,6 +90,16 @@
 		B2FE18FC1BA120AF00BF2ACB /* UserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE18FB1BA120AF00BF2ACB /* UserDefaultsUtils.m */; };
 		B2FE19051BA1297400BF2ACB /* UserInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE19041BA1297400BF2ACB /* UserInfoUtil.m */; };
 		B2FE19081BA1299B00BF2ACB /* UrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE19071BA1299B00BF2ACB /* UrlManager.m */; };
+		FBE5A6281BD202D10037E321 /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A6231BD202D10037E321 /* gray.png */; };
+		FBE5A6291BD202D10037E321 /* navBackIndicatorImg2_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A6241BD202D10037E321 /* navBackIndicatorImg2_hl@2x.png */; };
+		FBE5A62A1BD202D10037E321 /* navBackIndicatorImg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A6251BD202D10037E321 /* navBackIndicatorImg2@2x.png */; };
+		FBE5A62B1BD202D10037E321 /* refreshBtn_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A6261BD202D10037E321 /* refreshBtn_hl@2x.png */; };
+		FBE5A62C1BD202D10037E321 /* refreshBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE5A6271BD202D10037E321 /* refreshBtn@2x.png */; };
+		FBE5A62F1BD203010037E321 /* SJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE5A62E1BD203010037E321 /* SJWebViewController.m */; };
+		FBE5A6351BD203460037E321 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE5A6321BD203460037E321 /* NJKWebViewProgress.m */; };
+		FBE5A6361BD203460037E321 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE5A6341BD203460037E321 /* NJKWebViewProgressView.m */; };
+		FBE5A6391BD203550037E321 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE5A6381BD203550037E321 /* DeviceInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FBE5A63C1BD2038F0037E321 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE5A63B1BD2038F0037E321 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +269,21 @@
 		B2FE19041BA1297400BF2ACB /* UserInfoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoUtil.m; sourceTree = "<group>"; };
 		B2FE19061BA1299B00BF2ACB /* UrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlManager.h; sourceTree = "<group>"; };
 		B2FE19071BA1299B00BF2ACB /* UrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlManager.m; sourceTree = "<group>"; };
+		FBE5A6231BD202D10037E321 /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
+		FBE5A6241BD202D10037E321 /* navBackIndicatorImg2_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBackIndicatorImg2_hl@2x.png"; sourceTree = "<group>"; };
+		FBE5A6251BD202D10037E321 /* navBackIndicatorImg2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBackIndicatorImg2@2x.png"; sourceTree = "<group>"; };
+		FBE5A6261BD202D10037E321 /* refreshBtn_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refreshBtn_hl@2x.png"; sourceTree = "<group>"; };
+		FBE5A6271BD202D10037E321 /* refreshBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refreshBtn@2x.png"; sourceTree = "<group>"; };
+		FBE5A62D1BD203010037E321 /* SJWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJWebViewController.h; sourceTree = "<group>"; };
+		FBE5A62E1BD203010037E321 /* SJWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJWebViewController.m; sourceTree = "<group>"; };
+		FBE5A6311BD203460037E321 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		FBE5A6321BD203460037E321 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		FBE5A6331BD203460037E321 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		FBE5A6341BD203460037E321 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		FBE5A6371BD203550037E321 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		FBE5A6381BD203550037E321 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		FBE5A63A1BD2038F0037E321 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		FBE5A63B1BD2038F0037E321 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,11 +337,8 @@
 		B213BD8B1B9D4DC80015B33E /* SJBase */ = {
 			isa = PBXGroup;
 			children = (
-				B213BDD31B9D5FE80015B33E /* SJUI */,
 				B213BDCF1B9D521E0015B33E /* SJHTTPRequest.h */,
 				B213BDD01B9D521E0015B33E /* SJHTTPRequest.m */,
-				B213BD8C1B9D4DC80015B33E /* CollectionViewOthers */,
-				B213BD9D1B9D4DC80015B33E /* HBModel */,
 				B213BDA01B9D4DC80015B33E /* SJModelViewController.h */,
 				B213BDA11B9D4DC80015B33E /* SJModelViewController.m */,
 				B213BDA21B9D4DC80015B33E /* SJNavAction.h */,
@@ -327,7 +349,12 @@
 				B213BDA71B9D4DC80015B33E /* SJTabBarController.m */,
 				B213BDA81B9D4DC80015B33E /* SJViewController.h */,
 				B213BDA91B9D4DC80015B33E /* SJViewController.m */,
+				FBE5A62D1BD203010037E321 /* SJWebViewController.h */,
+				FBE5A62E1BD203010037E321 /* SJWebViewController.m */,
+				B213BD9D1B9D4DC80015B33E /* HBModel */,
 				B213BDAA1B9D4DC80015B33E /* TableViewOthers */,
+				B213BD8C1B9D4DC80015B33E /* CollectionViewOthers */,
+				B213BDD31B9D5FE80015B33E /* SJUI */,
 				B213BDB11B9D4DC80015B33E /* UINavigation+Spacing.h */,
 				B213BDB21B9D4DC80015B33E /* UINavigation+Spacing.m */,
 			);
@@ -410,6 +437,10 @@
 		B213BDFB1B9D67C50015B33E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FBE5A63A1BD2038F0037E321 /* OpenUDID.h */,
+				FBE5A63B1BD2038F0037E321 /* OpenUDID.m */,
+				FBE5A6371BD203550037E321 /* DeviceInfo.h */,
+				FBE5A6381BD203550037E321 /* DeviceInfo.m */,
 				B2FE19031BA1297400BF2ACB /* UserInfoUtil.h */,
 				B2FE19041BA1297400BF2ACB /* UserInfoUtil.m */,
 				B2FE18FA1BA120AF00BF2ACB /* UserDefaultsUtils.h */,
@@ -456,6 +487,11 @@
 		B213BE2D1B9E96AA0015B33E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FBE5A6231BD202D10037E321 /* gray.png */,
+				FBE5A6241BD202D10037E321 /* navBackIndicatorImg2_hl@2x.png */,
+				FBE5A6251BD202D10037E321 /* navBackIndicatorImg2@2x.png */,
+				FBE5A6261BD202D10037E321 /* refreshBtn_hl@2x.png */,
+				FBE5A6271BD202D10037E321 /* refreshBtn@2x.png */,
 				B213BE2E1B9E96AA0015B33E /* afreshLoad@2x.png */,
 				B213BE2F1B9E96AA0015B33E /* IconFoBlueCircle@2x.png */,
 				B213BE301B9E96AA0015B33E /* IconForBlackCircle@2x.png */,
@@ -539,6 +575,7 @@
 		B2D363C31B9C297500F24E11 /* ThirdPartyClass */ = {
 			isa = PBXGroup;
 			children = (
+				FBE5A6301BD203460037E321 /* NJKWebViewProgress */,
 				B213BE081B9D70610015B33E /* RefreshHeadView */,
 				B2D363E61B9C2FB900F24E11 /* JSONKit */,
 				B2D363E91B9C2FB900F24E11 /* RFJModel */,
@@ -614,6 +651,17 @@
 				B2D363EB1B9C2FB900F24E11 /* RFJModel.m */,
 			);
 			path = RFJModel;
+			sourceTree = "<group>";
+		};
+		FBE5A6301BD203460037E321 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				FBE5A6311BD203460037E321 /* NJKWebViewProgress.h */,
+				FBE5A6321BD203460037E321 /* NJKWebViewProgress.m */,
+				FBE5A6331BD203460037E321 /* NJKWebViewProgressView.h */,
+				FBE5A6341BD203460037E321 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,10 +744,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE5A6291BD202D10037E321 /* navBackIndicatorImg2_hl@2x.png in Resources */,
+				FBE5A62C1BD202D10037E321 /* refreshBtn@2x.png in Resources */,
+				FBE5A62A1BD202D10037E321 /* navBackIndicatorImg2@2x.png in Resources */,
 				B213BE3C1B9E96AA0015B33E /* navBackIndicatorImg_hl@2x.png in Resources */,
+				FBE5A6281BD202D10037E321 /* gray.png in Resources */,
 				B2D363A91B9C271700F24E11 /* Main.storyboard in Resources */,
 				B2D363AE1B9C271700F24E11 /* LaunchScreen.xib in Resources */,
 				B2D363AB1B9C271700F24E11 /* Images.xcassets in Resources */,
+				FBE5A62B1BD202D10037E321 /* refreshBtn_hl@2x.png in Resources */,
 				B213BE3E1B9E96AA0015B33E /* navBarBg64@2x.png in Resources */,
 				B213BE3A1B9E96AA0015B33E /* IconForWhiteCircle@2x.png in Resources */,
 				B213BE3D1B9E96AA0015B33E /* navBarBg44@2x.png in Resources */,
@@ -735,6 +788,7 @@
 				B213BDE41B9D61B40015B33E /* HBErrorView.m in Sources */,
 				B213BDE31B9D61B40015B33E /* HBEmptyView.m in Sources */,
 				B213BDE71B9D61B40015B33E /* SJTopTipView.m in Sources */,
+				FBE5A6351BD203460037E321 /* NJKWebViewProgress.m in Sources */,
 				B213BD8A1B9C46AB0015B33E /* NSData+SJ.m in Sources */,
 				B213BDC01B9D4DC80015B33E /* SJViewController.m in Sources */,
 				B213BDFE1B9D67C50015B33E /* StringUtil.m in Sources */,
@@ -745,10 +799,12 @@
 				B213BDF51B9D64BB0015B33E /* UITabBarItem+Add.m in Sources */,
 				B213BDD11B9D521E0015B33E /* SJHTTPRequest.m in Sources */,
 				B213BE151B9D70610015B33E /* CLLRefreshHeadController.m in Sources */,
+				FBE5A63C1BD2038F0037E321 /* OpenUDID.m in Sources */,
 				B213BE071B9D6F2A0015B33E /* ValueValidator.m in Sources */,
 				B213BE291B9D7A6E0015B33E /* SJBounceAnimation.m in Sources */,
 				B213BE131B9D70610015B33E /* CLLRefreshCircleView.m in Sources */,
 				B213BDBF1B9D4DC80015B33E /* SJTabBarController.m in Sources */,
+				FBE5A6361BD203460037E321 /* NJKWebViewProgressView.m in Sources */,
 				B2D363DE1B9C297500F24E11 /* ASIHTTPRequest.m in Sources */,
 				B2D363D91B9C297500F24E11 /* ASIAuthenticationDialog.m in Sources */,
 				B213BDB51B9D4DC80015B33E /* SJCollectionViewDataSource.m in Sources */,
@@ -762,11 +818,13 @@
 				B213BDB61B9D4DC80015B33E /* SJCollectionViewFooterView.m in Sources */,
 				B2D363DD1B9C297500F24E11 /* ASIFormDataRequest.m in Sources */,
 				B213BDF41B9D64BB0015B33E /* UIImage+Color.m in Sources */,
+				FBE5A6391BD203550037E321 /* DeviceInfo.m in Sources */,
 				B213BE041B9D6B710015B33E /* SJImageView.m in Sources */,
 				B213BE2C1B9D7C730015B33E /* NetworkUnit.m in Sources */,
 				B2FE19051BA1297400BF2ACB /* UserInfoUtil.m in Sources */,
 				B213BDBB1B9D4DC80015B33E /* SJModel.m in Sources */,
 				B213BDC41B9D4DC80015B33E /* UINavigation+Spacing.m in Sources */,
+				FBE5A62F1BD203010037E321 /* SJWebViewController.m in Sources */,
 				B213BDF61B9D64BB0015B33E /* UITableView+Add.m in Sources */,
 				B213BE161B9D70610015B33E /* CLLRefreshHeadView.m in Sources */,
 				B213BDE61B9D61B40015B33E /* HBMessageBox.m in Sources */,
