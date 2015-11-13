@@ -59,7 +59,7 @@
           forControlEvents:UIControlEventTouchUpInside];
     
     _backBtnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-    _backBtnClose.frame = CGRectMake(IsiPhone6() ? _webBackBtn.right - 15: _webBackBtn.right - 25, 20, 60, 44);
+    _backBtnClose.frame = CGRectMake(IsiPhone6AndAbove() ? _webBackBtn.right - 15: _webBackBtn.right - 25, 20, 60, 44);
     _backBtnClose.backgroundColor = [UIColor clearColor];
     [_backBtnClose setTitle:@"关闭" forState:UIControlStateNormal];
     [_backBtnClose setTitleEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 0)];

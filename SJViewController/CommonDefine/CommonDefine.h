@@ -43,7 +43,7 @@ typedef NS_ENUM(int, SJTabState) {
 #define IsiOS7() (OSVersion() >= 7.0)
 #define IsNotiOS7() (OSVersion() < 7.0)
 #define IsiPad() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define IsiPhone6() ([[UIScreen mainScreen] bounds].size.width >= 750/2 ? YES : NO)
+#define IsiPhone6AndAbove() ((([[UIScreen mainScreen] bounds].size.width >= 750 / 2) && (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)) ? YES : NO)
 #define Is3dot5Inch() (UI_SCREEN_HEIGHT <= 480 ? YES : NO)
 
 #define isRetina ([[UIScreen mainScreen] scale] >= 2 ? YES : NO)
