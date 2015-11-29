@@ -22,6 +22,7 @@
 @interface SJTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) id object;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object;
 

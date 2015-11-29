@@ -98,6 +98,9 @@
     
     if ([cell isKindOfClass:[SJTableViewCell class]]) {
         [(SJTableViewCell *) cell setObject:object];
+        
+        SJTableViewCell *sjCell = (SJTableViewCell *)cell;
+        sjCell.indexPath = indexPath;
     }
     
     [self tableView:tableView cell:cell willAppearAtIndexPath:indexPath];
