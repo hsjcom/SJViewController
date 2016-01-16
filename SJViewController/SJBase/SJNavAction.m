@@ -95,7 +95,7 @@
     }
 }
 
-/*
+/**
  * 获取当前屏幕显示的UIViewController
  * by Soldier
  */

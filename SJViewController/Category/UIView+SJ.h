@@ -147,6 +147,11 @@
  */
 -(void)setViewCornerRadius:(CGFloat)cornerRadius;
 
+/**
+ *  获取当前view所在的controller
+ */
+- (UIViewController *)viewOfController;
+
 @end
 
 

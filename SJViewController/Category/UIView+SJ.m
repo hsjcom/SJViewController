@@ -236,4 +236,19 @@
     self.layer.cornerRadius = cornerRadius;
     self.contentMode = UIViewContentModeScaleAspectFill;
 }
+
+/**
+ *  获取当前view所在的controller
+ */
+- (UIViewController *)viewOfController {
+    for (UIView *next = [self superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    
+    return nil;
+}
+
 @end

@@ -25,7 +25,9 @@
 + (UIViewController *)pushVCWithName:(NSString *)name andQuery:(NSDictionary *)query animated:(BOOL)animated;
 
 
-//获取当前屏幕显示的UIViewController
+/**
+ * 获取当前屏幕显示的UIViewController
+ */
 + (UIViewController *)getCurrentViewController;
 
 /*
