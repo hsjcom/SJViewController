@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  SJViewController
 //
-//  Created by Soldier on 15/9/6.
+//  Created by Shaojie Hong on 15/9/6.
 //  Copyright (c) 2015年 Shaojie Hong. All rights reserved.
 //
 
@@ -11,9 +11,9 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
 
-@property (strong, nonatomic) SJTabBarController *tabBarController;
+@property (nonatomic, strong) SJTabBarController *tabBarController;
 
 @end
 

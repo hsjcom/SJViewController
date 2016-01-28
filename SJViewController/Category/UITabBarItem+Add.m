@@ -10,8 +10,7 @@
 
 @implementation UITabBarItem (Add)
 
-- (instancetype)initWithTitle:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage tag:(int)tag
-{
+- (instancetype)initWithTitle:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage tag:(int)tag {
     UITabBarItem *item = nil;
     if (IsiOS7()) {
         // 采用 原图 不让其处理
