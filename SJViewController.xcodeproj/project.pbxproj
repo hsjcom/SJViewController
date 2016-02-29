@@ -92,6 +92,7 @@
 		B2DF8F801C27CB69009A4675 /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F771C27CB69009A4675 /* SWTableViewCell.m */; };
 		B2DF8F811C27CB69009A4675 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F791C27CB69009A4675 /* SWUtilityButtonTapGestureRecognizer.m */; };
 		B2DF8F821C27CB69009A4675 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F7B1C27CB69009A4675 /* SWUtilityButtonView.m */; };
+		B2E9D0DD1C83EB13003F767B /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9D0DC1C83EB13003F767B /* UIAlertView+Blocks.m */; };
 		B2FE18F81BA11FE800BF2ACB /* NSArray+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE18F51BA11FE800BF2ACB /* NSArray+SJ.m */; };
 		B2FE18F91BA11FE800BF2ACB /* NSDictionary+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE18F71BA11FE800BF2ACB /* NSDictionary+SJ.m */; };
 		B2FE18FC1BA120AF00BF2ACB /* UserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE18FB1BA120AF00BF2ACB /* UserDefaultsUtils.m */; };
@@ -280,6 +281,8 @@
 		B2DF8F791C27CB69009A4675 /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
 		B2DF8F7A1C27CB69009A4675 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		B2DF8F7B1C27CB69009A4675 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
+		B2E9D0DB1C83EB13003F767B /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		B2E9D0DC1C83EB13003F767B /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		B2FE18F41BA11FE800BF2ACB /* NSArray+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SJ.h"; sourceTree = "<group>"; };
 		B2FE18F51BA11FE800BF2ACB /* NSArray+SJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SJ.m"; sourceTree = "<group>"; };
 		B2FE18F61BA11FE800BF2ACB /* NSDictionary+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SJ.h"; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 		B213BD841B9C46720015B33E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B2E9D0DB1C83EB13003F767B /* UIAlertView+Blocks.h */,
+				B2E9D0DC1C83EB13003F767B /* UIAlertView+Blocks.m */,
 				B2FE18F41BA11FE800BF2ACB /* NSArray+SJ.h */,
 				B2FE18F51BA11FE800BF2ACB /* NSArray+SJ.m */,
 				B2FE18F61BA11FE800BF2ACB /* NSDictionary+SJ.h */,
@@ -890,6 +895,7 @@
 				B2D363E01B9C297500F24E11 /* ASINetworkQueue.m in Sources */,
 				B2D363ED1B9C2FB900F24E11 /* RFJModel.m in Sources */,
 				B2D363DB1B9C297500F24E11 /* ASIDataDecompressor.m in Sources */,
+				B2E9D0DD1C83EB13003F767B /* UIAlertView+Blocks.m in Sources */,
 				B2D363E41B9C2AE000F24E11 /* Reachability.m in Sources */,
 				B213BDC31B9D4DC80015B33E /* SJTableViewDataSource.m in Sources */,
 				B2DF8F7D1C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.m in Sources */,
