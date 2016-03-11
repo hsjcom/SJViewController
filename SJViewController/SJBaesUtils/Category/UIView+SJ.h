@@ -145,7 +145,10 @@
 /**
  *  设置圆角矩形
  */
--(void)setViewCornerRadius:(CGFloat)cornerRadius;
+- (void)setViewCornerRadius:(CGFloat)cornerRadius;
+
+- (void)setViewCornerRadius:(CGFloat)cornerRadius
+                borderColor:(UIColor *)borderColor;
 
 /**
  *  获取当前view所在的controller

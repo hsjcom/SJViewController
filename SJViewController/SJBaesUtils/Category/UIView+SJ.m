@@ -237,6 +237,19 @@
     self.contentMode = UIViewContentModeScaleAspectFill;
 }
 
+- (void)setViewCornerRadius:(CGFloat)cornerRadius
+                borderColor:(UIColor *)borderColor {
+    if (cornerRadius > 0) {
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = cornerRadius;
+    }
+    
+    if (borderColor) {
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = borderColor.CGColor;
+    }
+}
+
 /**
  *  获取当前view所在的controller
  */
