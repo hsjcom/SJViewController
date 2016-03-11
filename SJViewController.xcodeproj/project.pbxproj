@@ -70,6 +70,7 @@
 		B2D363E41B9C2AE000F24E11 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363E31B9C2AE000F24E11 /* Reachability.m */; };
 		B2D363EC1B9C2FB900F24E11 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363E81B9C2FB900F24E11 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B2D363ED1B9C2FB900F24E11 /* RFJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363EB1B9C2FB900F24E11 /* RFJModel.m */; };
+		B2D9193E1C92D59F00F050DB /* UITextField+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D9193D1C92D59F00F050DB /* UITextField+SJ.m */; };
 		B2DF8F7C1C27CB69009A4675 /* SJSwipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F6E1C27CB69009A4675 /* SJSwipTableViewCell.m */; };
 		B2DF8F7D1C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F711C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.m */; };
 		B2DF8F7E1C27CB69009A4675 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F731C27CB69009A4675 /* SWCellScrollView.m */; };
@@ -266,6 +267,8 @@
 		B2D363E81B9C2FB900F24E11 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		B2D363EA1B9C2FB900F24E11 /* RFJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFJModel.h; sourceTree = "<group>"; };
 		B2D363EB1B9C2FB900F24E11 /* RFJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFJModel.m; sourceTree = "<group>"; };
+		B2D9193C1C92D59F00F050DB /* UITextField+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SJ.h"; sourceTree = "<group>"; };
+		B2D9193D1C92D59F00F050DB /* UITextField+SJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SJ.m"; sourceTree = "<group>"; };
 		B2DF8F6D1C27CB69009A4675 /* SJSwipTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSwipTableViewCell.h; sourceTree = "<group>"; };
 		B2DF8F6E1C27CB69009A4675 /* SJSwipTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSwipTableViewCell.m; sourceTree = "<group>"; };
 		B2DF8F701C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
@@ -746,6 +749,8 @@
 		B2E9D13D1C83F1DB003F767B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B2D9193C1C92D59F00F050DB /* UITextField+SJ.h */,
+				B2D9193D1C92D59F00F050DB /* UITextField+SJ.m */,
 				B2E9D13E1C83F1DB003F767B /* NSArray+SJ.h */,
 				B2E9D13F1C83F1DB003F767B /* NSArray+SJ.m */,
 				B2E9D1401C83F1DB003F767B /* NSData+SJ.h */,
@@ -1081,6 +1086,7 @@
 				B213BDBB1B9D4DC80015B33E /* SJModel.m in Sources */,
 				B213BDC41B9D4DC80015B33E /* UINavigation+Spacing.m in Sources */,
 				FBE5A62F1BD203010037E321 /* SJWebViewController.m in Sources */,
+				B2D9193E1C92D59F00F050DB /* UITextField+SJ.m in Sources */,
 				B2E9D1BF1C83F1DB003F767B /* CALayer+YYAdd.m in Sources */,
 				B2E9D1AE1C83F1DB003F767B /* UIImage+Color.m in Sources */,
 				B2E9D1DA1C83F1DB003F767B /* ValueValidator.m in Sources */,
