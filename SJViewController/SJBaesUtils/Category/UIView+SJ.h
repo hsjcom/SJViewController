@@ -148,7 +148,8 @@
 - (void)setViewCornerRadius:(CGFloat)cornerRadius;
 
 - (void)setViewCornerRadius:(CGFloat)cornerRadius
-                borderColor:(UIColor *)borderColor;
+                borderColor:(UIColor *)borderColor
+                borderWidth:(CGFloat)borderWidth;
 
 /**
  *  获取当前view所在的controller

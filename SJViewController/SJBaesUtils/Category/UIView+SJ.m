@@ -238,14 +238,15 @@
 }
 
 - (void)setViewCornerRadius:(CGFloat)cornerRadius
-                borderColor:(UIColor *)borderColor {
+                borderColor:(UIColor *)borderColor
+                borderWidth:(CGFloat)borderWidth {
     if (cornerRadius > 0) {
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = cornerRadius;
     }
     
-    if (borderColor) {
-        self.layer.borderWidth = 1;
+    if (borderWidth > 0) {
+        self.layer.borderWidth = borderWidth;
         self.layer.borderColor = borderColor.CGColor;
     }
 }
