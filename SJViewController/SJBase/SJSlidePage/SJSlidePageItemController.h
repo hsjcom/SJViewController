@@ -18,12 +18,16 @@
 @property (nonatomic, weak) id<SJSlidePageDelegate> spDelegate;
 
 /**
+ * @require
  * reload model 数据，根据子类的数据类型 重写
  */
 - (void)reloadModel:(SJSlidePageModel *)model;
 
-- (void)initialQuery:(NSDictionary *)query;
-
+/**
+ * @require
+ */
 - (void)initialPageIndex:(NSInteger)index;
+
+- (void)initialQuery:(NSDictionary *)query;
 
 @end
