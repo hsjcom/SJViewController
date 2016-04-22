@@ -14,11 +14,15 @@
 
 @protocol SJSlidePageDelegate <NSObject>
 
+@required
+
 - (void)updatePageModel:(SJSlidePageModel *)model;
 
-- (void)scrollWithContentOffsetY:(CGFloat)contentOffsetY offset:(CGFloat)offset; // offset 其它参数
-
 - (void)updateContentOffset:(CGFloat)contentOffsetY;
+
+@optional
+
+- (void)scrollWithContentOffsetY:(CGFloat)contentOffsetY offset:(CGFloat)offset; // offset 其它参数
 
 @end
 
