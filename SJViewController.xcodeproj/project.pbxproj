@@ -19,7 +19,6 @@
 		B213BDB71B9D4DC80015B33E /* SJCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BD961B9D4DC80015B33E /* SJCollectionViewHeaderView.m */; };
 		B213BDB81B9D4DC80015B33E /* SJCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BD981B9D4DC80015B33E /* SJCollectionViewItem.m */; };
 		B213BDB91B9D4DC80015B33E /* SJCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BD9A1B9D4DC80015B33E /* SJCollectionViewLayout.m */; };
-		B213BDBB1B9D4DC80015B33E /* SJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BD9F1B9D4DC80015B33E /* SJModel.m */; };
 		B213BDBC1B9D4DC80015B33E /* SJModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA11B9D4DC80015B33E /* SJModelViewController.m */; };
 		B213BDBD1B9D4DC80015B33E /* SJNavAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA31B9D4DC80015B33E /* SJNavAction.m */; };
 		B213BDBE1B9D4DC80015B33E /* SJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B213BDA51B9D4DC80015B33E /* SJNavigationController.m */; };
@@ -52,6 +51,14 @@
 		B213BE3D1B9E96AA0015B33E /* navBarBg44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B213BE341B9E96AA0015B33E /* navBarBg44@2x.png */; };
 		B213BE3E1B9E96AA0015B33E /* navBarBg64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B213BE351B9E96AA0015B33E /* navBarBg64@2x.png */; };
 		B213BE3F1B9E96AA0015B33E /* noNetworkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B213BE361B9E96AA0015B33E /* noNetworkIcon@2x.png */; };
+		B224B17D1CCA0BEC0018A031 /* SJSlidePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1741CCA0BEC0018A031 /* SJSlidePageCell.m */; };
+		B224B17E1CCA0BEC0018A031 /* SJSlidePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1761CCA0BEC0018A031 /* SJSlidePageController.m */; };
+		B224B17F1CCA0BEC0018A031 /* SJSlidePageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1781CCA0BEC0018A031 /* SJSlidePageItemController.m */; };
+		B224B1801CCA0BEC0018A031 /* SJSlidePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B17A1CCA0BEC0018A031 /* SJSlidePageModel.m */; };
+		B224B1811CCA0BEC0018A031 /* SJSlideTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B17C1CCA0BEC0018A031 /* SJSlideTabItem.m */; };
+		B224B1851CCA101B0018A031 /* SJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1841CCA101B0018A031 /* SJModel.m */; };
+		B224B18B1CCA11400018A031 /* FDSlideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1881CCA11400018A031 /* FDSlideBar.m */; };
+		B224B18C1CCA11400018A031 /* FDSlideBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B18A1CCA11400018A031 /* FDSlideBarItem.m */; };
 		B2D363A01B9C271700F24E11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D3639F1B9C271700F24E11 /* main.m */; };
 		B2D363A31B9C271700F24E11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363A21B9C271700F24E11 /* AppDelegate.m */; };
 		B2D363A61B9C271700F24E11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363A51B9C271700F24E11 /* ViewController.m */; };
@@ -170,8 +177,6 @@
 		B213BD981B9D4DC80015B33E /* SJCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJCollectionViewItem.m; sourceTree = "<group>"; };
 		B213BD991B9D4DC80015B33E /* SJCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJCollectionViewLayout.h; sourceTree = "<group>"; };
 		B213BD9A1B9D4DC80015B33E /* SJCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJCollectionViewLayout.m; sourceTree = "<group>"; };
-		B213BD9E1B9D4DC80015B33E /* SJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJModel.h; sourceTree = "<group>"; };
-		B213BD9F1B9D4DC80015B33E /* SJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJModel.m; sourceTree = "<group>"; };
 		B213BDA01B9D4DC80015B33E /* SJModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJModelViewController.h; sourceTree = "<group>"; };
 		B213BDA11B9D4DC80015B33E /* SJModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJModelViewController.m; sourceTree = "<group>"; };
 		B213BDA21B9D4DC80015B33E /* SJNavAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavAction.h; sourceTree = "<group>"; };
@@ -228,6 +233,22 @@
 		B213BE341B9E96AA0015B33E /* navBarBg44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBg44@2x.png"; sourceTree = "<group>"; };
 		B213BE351B9E96AA0015B33E /* navBarBg64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBg64@2x.png"; sourceTree = "<group>"; };
 		B213BE361B9E96AA0015B33E /* noNetworkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noNetworkIcon@2x.png"; sourceTree = "<group>"; };
+		B224B1731CCA0BEC0018A031 /* SJSlidePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageCell.h; sourceTree = "<group>"; };
+		B224B1741CCA0BEC0018A031 /* SJSlidePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageCell.m; sourceTree = "<group>"; };
+		B224B1751CCA0BEC0018A031 /* SJSlidePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageController.h; sourceTree = "<group>"; };
+		B224B1761CCA0BEC0018A031 /* SJSlidePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageController.m; sourceTree = "<group>"; };
+		B224B1771CCA0BEC0018A031 /* SJSlidePageItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageItemController.h; sourceTree = "<group>"; };
+		B224B1781CCA0BEC0018A031 /* SJSlidePageItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageItemController.m; sourceTree = "<group>"; };
+		B224B1791CCA0BEC0018A031 /* SJSlidePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageModel.h; sourceTree = "<group>"; };
+		B224B17A1CCA0BEC0018A031 /* SJSlidePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageModel.m; sourceTree = "<group>"; };
+		B224B17B1CCA0BEC0018A031 /* SJSlideTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlideTabItem.h; sourceTree = "<group>"; };
+		B224B17C1CCA0BEC0018A031 /* SJSlideTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlideTabItem.m; sourceTree = "<group>"; };
+		B224B1831CCA101B0018A031 /* SJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJModel.h; sourceTree = "<group>"; };
+		B224B1841CCA101B0018A031 /* SJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJModel.m; sourceTree = "<group>"; };
+		B224B1871CCA11400018A031 /* FDSlideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDSlideBar.h; sourceTree = "<group>"; };
+		B224B1881CCA11400018A031 /* FDSlideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDSlideBar.m; sourceTree = "<group>"; };
+		B224B1891CCA11400018A031 /* FDSlideBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDSlideBarItem.h; sourceTree = "<group>"; };
+		B224B18A1CCA11400018A031 /* FDSlideBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDSlideBarItem.m; sourceTree = "<group>"; };
 		B2D3639A1B9C271700F24E11 /* SJViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D3639E1B9C271700F24E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2D3639F1B9C271700F24E11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -443,7 +464,8 @@
 				B213BDA91B9D4DC80015B33E /* SJViewController.m */,
 				FBE5A62D1BD203010037E321 /* SJWebViewController.h */,
 				FBE5A62E1BD203010037E321 /* SJWebViewController.m */,
-				B213BD9D1B9D4DC80015B33E /* HBModel */,
+				B224B1721CCA0BEC0018A031 /* SJSlidePage */,
+				B224B1821CCA101B0018A031 /* SJModel */,
 				B213BDAA1B9D4DC80015B33E /* TableViewOthers */,
 				B213BD8C1B9D4DC80015B33E /* CollectionViewOthers */,
 				B213BDD31B9D5FE80015B33E /* SJUI */,
@@ -472,15 +494,6 @@
 				B213BD9A1B9D4DC80015B33E /* SJCollectionViewLayout.m */,
 			);
 			path = CollectionViewOthers;
-			sourceTree = "<group>";
-		};
-		B213BD9D1B9D4DC80015B33E /* HBModel */ = {
-			isa = PBXGroup;
-			children = (
-				B213BD9E1B9D4DC80015B33E /* SJModel.h */,
-				B213BD9F1B9D4DC80015B33E /* SJModel.m */,
-			);
-			path = HBModel;
 			sourceTree = "<group>";
 		};
 		B213BDAA1B9D4DC80015B33E /* TableViewOthers */ = {
@@ -567,6 +580,43 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		B224B1721CCA0BEC0018A031 /* SJSlidePage */ = {
+			isa = PBXGroup;
+			children = (
+				B224B1731CCA0BEC0018A031 /* SJSlidePageCell.h */,
+				B224B1741CCA0BEC0018A031 /* SJSlidePageCell.m */,
+				B224B1751CCA0BEC0018A031 /* SJSlidePageController.h */,
+				B224B1761CCA0BEC0018A031 /* SJSlidePageController.m */,
+				B224B1771CCA0BEC0018A031 /* SJSlidePageItemController.h */,
+				B224B1781CCA0BEC0018A031 /* SJSlidePageItemController.m */,
+				B224B1791CCA0BEC0018A031 /* SJSlidePageModel.h */,
+				B224B17A1CCA0BEC0018A031 /* SJSlidePageModel.m */,
+				B224B17B1CCA0BEC0018A031 /* SJSlideTabItem.h */,
+				B224B17C1CCA0BEC0018A031 /* SJSlideTabItem.m */,
+			);
+			path = SJSlidePage;
+			sourceTree = "<group>";
+		};
+		B224B1821CCA101B0018A031 /* SJModel */ = {
+			isa = PBXGroup;
+			children = (
+				B224B1831CCA101B0018A031 /* SJModel.h */,
+				B224B1841CCA101B0018A031 /* SJModel.m */,
+			);
+			path = SJModel;
+			sourceTree = "<group>";
+		};
+		B224B1861CCA11400018A031 /* FDSlideBar */ = {
+			isa = PBXGroup;
+			children = (
+				B224B1871CCA11400018A031 /* FDSlideBar.h */,
+				B224B1881CCA11400018A031 /* FDSlideBar.m */,
+				B224B1891CCA11400018A031 /* FDSlideBarItem.h */,
+				B224B18A1CCA11400018A031 /* FDSlideBarItem.m */,
+			);
+			path = FDSlideBar;
+			sourceTree = "<group>";
+		};
 		B2D363911B9C271700F24E11 = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +686,7 @@
 		B2D363C31B9C297500F24E11 /* ThirdPartyClass */ = {
 			isa = PBXGroup;
 			children = (
+				B224B1861CCA11400018A031 /* FDSlideBar */,
 				FBE5A6301BD203460037E321 /* NJKWebViewProgress */,
 				B213BE081B9D70610015B33E /* RefreshHeadView */,
 				B2D363E61B9C2FB900F24E11 /* JSONKit */,
@@ -1024,6 +1075,7 @@
 				B2E9D1B51C83F1DB003F767B /* NSDate+YYAdd.m in Sources */,
 				FBE5A6351BD203460037E321 /* NJKWebViewProgress.m in Sources */,
 				B213BDC01B9D4DC80015B33E /* SJViewController.m in Sources */,
+				B224B17E1CCA0BEC0018A031 /* SJSlidePageController.m in Sources */,
 				B2E9D1BD1C83F1DB003F767B /* NSString+YYAdd.m in Sources */,
 				B2E9D1C81C83F1DB003F767B /* UIGestureRecognizer+YYAdd.m in Sources */,
 				B2E9D1C21C83F1DB003F767B /* UIBarButtonItem+YYAdd.m in Sources */,
@@ -1038,8 +1090,10 @@
 				B2E9D1CB1C83F1DB003F767B /* UIScrollView+YYAdd.m in Sources */,
 				B213BE151B9D70610015B33E /* CLLRefreshHeadController.m in Sources */,
 				B2DF8F7F1C27CB69009A4675 /* SWLongPressGestureRecognizer.m in Sources */,
+				B224B17D1CCA0BEC0018A031 /* SJSlidePageCell.m in Sources */,
 				B2E9D1DB1C83F1DB003F767B /* ViewConstructUtil.m in Sources */,
 				B2E9D1D11C83F1DB003F767B /* ImageUtil.m in Sources */,
+				B224B18C1CCA11400018A031 /* FDSlideBarItem.m in Sources */,
 				B2E9D1A91C83F1DB003F767B /* NSArray+SJ.m in Sources */,
 				B2E9D1B01C83F1DB003F767B /* UITableView+Add.m in Sources */,
 				B2E9D1D31C83F1DB003F767B /* OpenUDID.m in Sources */,
@@ -1068,6 +1122,7 @@
 				B2E9D1B91C83F1DB003F767B /* NSNumber+YYAdd.m in Sources */,
 				B2E9D1C61C83F1DB003F767B /* UIDevice+YYAdd.m in Sources */,
 				B2E9D1C71C83F1DB003F767B /* UIFont+YYAdd.m in Sources */,
+				B224B1801CCA0BEC0018A031 /* SJSlidePageModel.m in Sources */,
 				B2E9D1C91C83F1DB003F767B /* UIImage+YYAdd.m in Sources */,
 				B2E9D1AA1C83F1DB003F767B /* NSData+SJ.m in Sources */,
 				B2E9D1B31C83F1DB003F767B /* NSBundle+YYAdd.m in Sources */,
@@ -1076,18 +1131,21 @@
 				B2E9D1C41C83F1DB003F767B /* UIColor+YYAdd.m in Sources */,
 				B2D363DD1B9C297500F24E11 /* ASIFormDataRequest.m in Sources */,
 				B2E9D1D71C83F1DB003F767B /* StringUtil.m in Sources */,
+				B224B1811CCA0BEC0018A031 /* SJSlideTabItem.m in Sources */,
 				B2E9D1D01C83F1DB003F767B /* DeviceInfo.m in Sources */,
+				B224B18B1CCA11400018A031 /* FDSlideBar.m in Sources */,
 				B2E9D1BE1C83F1DB003F767B /* NSTimer+YYAdd.m in Sources */,
 				B2E9D1D21C83F1DB003F767B /* NetworkUnit.m in Sources */,
 				B2E9D1CD1C83F1DB003F767B /* UITextField+YYAdd.m in Sources */,
 				B2E9D1B11C83F1DB003F767B /* UIView+SJ.m in Sources */,
 				B2E9D1BB1C83F1DB003F767B /* NSObject+YYAddForARC.m in Sources */,
 				B2E9D1D81C83F1DB003F767B /* UserDefaultsUtils.m in Sources */,
-				B213BDBB1B9D4DC80015B33E /* SJModel.m in Sources */,
 				B213BDC41B9D4DC80015B33E /* UINavigation+Spacing.m in Sources */,
 				FBE5A62F1BD203010037E321 /* SJWebViewController.m in Sources */,
 				B2D9193E1C92D59F00F050DB /* UITextField+SJ.m in Sources */,
 				B2E9D1BF1C83F1DB003F767B /* CALayer+YYAdd.m in Sources */,
+				B224B1851CCA101B0018A031 /* SJModel.m in Sources */,
+				B224B17F1CCA0BEC0018A031 /* SJSlidePageItemController.m in Sources */,
 				B2E9D1AE1C83F1DB003F767B /* UIImage+Color.m in Sources */,
 				B2E9D1DA1C83F1DB003F767B /* ValueValidator.m in Sources */,
 				B2E9D1AD1C83F1DB003F767B /* UIAlertView+Blocks.m in Sources */,

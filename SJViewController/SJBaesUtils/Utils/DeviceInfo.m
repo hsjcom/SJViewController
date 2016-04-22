@@ -3,7 +3,7 @@
 // 
 //
 //  Created by Shaojie Hong on 15-2-2.
-//  Copyright (c) 2015年 厦门海豹信息技术. All rights reserved.
+//  Copyright (c) 2015年 Shaojie Hong. All rights reserved.
 //
 
 #import "DeviceInfo.h"
