@@ -58,4 +58,23 @@ static NSUInteger ImageRoundCornerALL = ImageRoundCorner_TopRight | ImageRoundCo
 + (UIImage *)imageNameIPad:(NSString *)imageName;
 
 
+/**
+ * 生成二维码图片
+ */
++ (CIImage *)createQRForString:(NSString *)qrString;
+
+/**
+ * 转换二维码图片
+ */
++ (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat)size;
+
+/**
+ * 改变二维码颜色
+ */
++ (UIImage *)imageBlackToTransparent:(UIImage *)image
+                             withRed:(CGFloat)red
+                            andGreen:(CGFloat)green
+                             andBlue:(CGFloat)blue;
+
+
 @end
