@@ -10,6 +10,11 @@
 #import "SJSlidePageController.h"
 #import "SJSlidePageModel.h"
 
+/**
+ * 注意
+ * viewDidLoad 里不能调 createModel
+ */
+
 @interface SJSlidePageItemController : SJTableViewController {
     CGFloat _lastPositionY;
 }

@@ -49,6 +49,7 @@
         return;
     }
     [self.controller reloadModel:model];
+    self.controller.page = model.page > 0 ? model.page : 1;
     [self.controller onDataUpdated];
     
     if (model.contentOffsetY >= 0) {
