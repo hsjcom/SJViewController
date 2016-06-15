@@ -11,14 +11,33 @@
 #import "SJTableViewDataSource.h"
 #import "UITableView+Add.h"
 
+@class SJTableViewOverlayView;
+
+@protocol SJTableViewOverlayViewDelegate <NSObject>
+
+- (UIView *)overlayView:(SJTableViewOverlayView *)view didHitTest:(CGPoint)point withEvent:(UIEvent *)event;
+
+@end
+
+
+
+
+/**
+ * 侧滑相关, 侧滑Cell的时候用的蒙层,当侧滑的菜单处于显示的状态时，该视图用来拦截点击事件 回收cell状态处理
+ */
+@interface SJTableViewOverlayView : UIView
+
+@property (weak, nonatomic) id<SJTableViewOverlayViewDelegate> delegate;
+
+@end
+
+
+
+
+
 @class SJTableViewCell;
 
 @interface SJTableViewController : SJModelViewController<UITableViewDelegate, CLLRefreshHeadControllerDelegate>{
-    SJTableViewCell __weak *_swipCell;
-    NSObject __weak *_swipCellItem;
-    CGFloat _swipContentOffSet;
-    UIControl *_upCoverCtl;  //对处于侧滑删除状态的cell以上view添加蒙层以点击撤销删除状态
-    UIControl *_downCoverCtl;//同上，cell以下view添加蒙层
     UITableView *_tableView;
 }
 
@@ -28,10 +47,10 @@
 @property(nonatomic, assign) NSInteger newItemsCount;
 @property(nonatomic, assign) int page;
 @property(nonatomic, assign) BOOL loadMoreEnable;
-@property(nonatomic, weak)   UITableViewCell *swipCell;
-@property(nonatomic, weak)   NSObject *swipCellItem;
 @property(nonatomic, assign) BOOL loadRefreshEnable;
-@property (nonatomic, strong) CLLRefreshHeadController *refreshControll;
+@property(nonatomic, strong) CLLRefreshHeadController *refreshControll;
+
+@property(nonatomic, strong) NSString *lastItemId; //单页最后一条数据ID用于分页
 
 
 - (UITableView *)tableView;
@@ -74,10 +93,6 @@
 //如果无数据则进行处理
 - (void)handleWhenNoneData;
 
-- (void)addCoverOnTableView;
-
-- (void)touchToRemoveCoverOnTableView;
-
 //cell 点击跳转方法
 - (void)didSelectObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
 
@@ -94,10 +109,22 @@
 - (BOOL)draggingNeedLoadMore;
 
 /*
- *  上拉更多结束时，TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
+ *  上拉更多结束时， TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
  *  default:_loadMoreEnable即有上拉刷新时有值  NO TableView的contentInset.bottom值为0   YES   TableView的contentInset.bottom值为CLLRefreshFooterViewHeight
  */
 - (BOOL)loadMoreHaveBottomInset;
+
+
+/**
+ *  是否支持侧拉Cell 显示更多
+ *
+ *  @return default：NO
+ */
+- (BOOL)canSwipeCellToShowMenuView;
+
+- (void)tableViewCell:(SJTableViewCell *)cell didSelectMenuViewItemIndex:(NSInteger)index;
+
+@property (nonatomic, assign) BOOL shouldDisableUserInteractionWhileEditing;
 
 
 @end

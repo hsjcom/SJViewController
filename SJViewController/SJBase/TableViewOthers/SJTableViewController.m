@@ -10,10 +10,34 @@
 #import "SJTableViewCell.h"
 #import "CLLRefreshHeadView.h"
 
+@implementation SJTableViewOverlayView
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    return [self.delegate overlayView:self didHitTest:point withEvent:event];
+}
+
+@end
+
+
+
+
+
+@interface SJTableViewController ()<SJTableViewOverlayViewDelegate>
+
+/**
+ *  侧滑Cell相关
+ */
+@property (nonatomic, strong) SJTableViewCell *cellDisplayingMenuOptions;
+@property (nonatomic, strong) SJTableViewOverlayView *overlayView;
+@property (nonatomic, assign) BOOL customEditing; //正在编辑中
+@property (nonatomic, assign) BOOL customEditingAnimationInProgress; //侧滑的动画正在进行中
+@end
+
+
+
 
 @implementation SJTableViewController
-@synthesize swipCell = _swipCell;
-@synthesize swipCellItem = _swipCellItem;
+
 @synthesize tableView = _tableView;
 @synthesize loadMoreEnable = _loadMoreEnable;
 @synthesize loadRefreshEnable = _loadRefreshEnable;
@@ -23,19 +47,15 @@
     [self setTableView:nil];
     [self setRefreshControll:nil];
     
-    _upCoverCtl = nil;
-    _downCoverCtl = nil;
-    
-    _swipCell = nil;
-    _swipCellItem = nil;
-    
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (id)initWithQuery:(NSDictionary *)query {
     self = [super initWithQuery:query];
     if (self) {
         self.page = 1;
+        self.lastItemId = @"";
         self.items = [NSMutableArray arrayWithCapacity:0];
         self.pullLoadType = PullDefault;
         
@@ -75,10 +95,10 @@
 }
 
 /*
- *  上拉更多结束时，TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
+ *  上拉更多结束时， TableView的contentInset.bottom是否有值，没值时会回弹，有值露出底部的一小块不回弹
  *  default:_loadMoreEnable即有上拉刷新时有值  NO TableView的contentInset.bottom值为0   YES   TableView的contentInset.bottom值为CLLRefreshFooterViewHeight
  */
--(BOOL)loadMoreHaveBottomInset{
+- (BOOL)loadMoreHaveBottomInset{
     return _loadMoreEnable;
 }
 
@@ -86,6 +106,21 @@
     [super viewDidLoad];
     
     [self tableView];
+    
+    [self addSwipListener];
+}
+
+//侧滑监听
+- (void)addSwipListener {
+    if ([self canSwipeCellToShowMenuView]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellContextMenuDidHide:) name:SJSwipeTableViewCellDidHideContextMenu object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellContextMenuDidShow:) name:SJSwipeTableViewCellDidShowContextMenu object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellContextMenuWillHide:) name:SJSwipeTableViewCellWillHideContextMenu object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellContextMenuWillShow:) name:SJSwipeTableViewCellWillShowContextMenu object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellContextMenuDidSelect:) name:SJSwipeTableViewCellMenuDidSelectItem object:nil];
+        
+        self.customEditing = self.customEditingAnimationInProgress = NO;
+    }
 }
 
 - (UITableView *)tableView{
@@ -111,6 +146,7 @@
         [_tableView reloadData];
     }
 }
+
 
 - (void)didFinishLoad:(SJHTTPRequest *)request {
     [super didFinishLoad:request];
@@ -200,59 +236,6 @@
 - (void)didEndDragging{
 }
 
-#pragma mark - CoverView
-
-- (void)addCoverOnTableView {
-    _upCoverCtl = [[UIControl alloc] initWithFrame:CGRectZero];
-    [_upCoverCtl addTarget:self action:@selector(touchToRemoveCoverOnTableView) forControlEvents:UIControlEventAllTouchEvents];
-    [self.tableView.superview addSubview:_upCoverCtl];
-    
-    _downCoverCtl = [[UIControl alloc] initWithFrame:CGRectZero];
-    [_downCoverCtl addTarget:self action:@selector(touchToRemoveCoverOnTableView) forControlEvents:UIControlEventAllTouchEvents];
-    [self.tableView.superview addSubview:_downCoverCtl];
-    
-    [self setCoverOnTableViewFrame];
-    
-    _swipContentOffSet = self.tableView.contentOffset.y;
-}
-
-- (void)setCoverOnTableViewFrame {
-    //因为_swipCell 会被重用，所以_swipCell不可完全信任
-    if (_swipCell.object != _swipCellItem) {
-        return;
-    }
-    
-    CGFloat tableTop = self.tableView.top;
-    CGRect cellFrame = [self.tableView convertRect:_swipCell.frame toView:self.tableView.superview];
-    
-    
-    if (cellFrame.origin.y + cellFrame.size.height < tableTop) {
-        _upCoverCtl.frame = CGRectZero;
-    }
-    else {
-        _upCoverCtl.frame = CGRectMake(0, tableTop, UI_SCREEN_WIDTH , cellFrame.origin.y - tableTop);
-    }
-    
-    CGFloat bottomTop = cellFrame.origin.y + cellFrame.size.height;
-    if (cellFrame.origin.y > self.tableView.bottom) {
-        _downCoverCtl.frame = CGRectZero;
-    }
-    else {
-        _downCoverCtl.frame = CGRectMake(0, bottomTop, UI_SCREEN_WIDTH, self.tableView.bottom - bottomTop);
-    }
-}
-
-- (void)touchToRemoveCoverOnTableView {
-    [_upCoverCtl removeFromSuperview];
-    [_downCoverCtl removeFromSuperview];
-    
-    [self clickToOutEditForCellReset];
-}
-
-- (void)clickToOutEditForCellReset {
-}
-
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -309,6 +292,7 @@
 - (void)refreshForNewData {
     self.pullLoadType = PullDownRefresh;
     self.page = 1;
+    self.lastItemId = @"";
     [self createModel];
 }
 
@@ -337,9 +321,6 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (_swipCell) {
-        [self setCoverOnTableViewFrame];
-    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -350,7 +331,8 @@
     [self didEndDragging];
 }
 
-#pragma mark HBErrorViewDelegate
+#pragma mark - HBErrorViewDelegate
+
 - (void)refreshBtnClicked{
     [self refreshForNewData];
 }
@@ -361,5 +343,118 @@
     }
     [self autoPullDown];
 }
+
+
+#pragma mark - cell侧滑相关
+
+//子类重写
+- (BOOL)canSwipeCellToShowMenuView{
+    return NO;
+}
+
+- (void)cellContextMenuDidHide:(NSNotification *)note{
+    //    HBTableViewCell *cell = note.object;
+    self.customEditing = NO;
+    self.customEditingAnimationInProgress = NO;
+}
+
+- (void)cellContextMenuDidShow:(NSNotification *)note {
+    SJTableViewCell *cell = note.object;
+    
+    self.cellDisplayingMenuOptions = cell;
+    self.customEditing = YES;
+    self.customEditingAnimationInProgress = NO;
+}
+
+- (void)cellContextMenuWillHide:(NSNotification *)note{
+    self.customEditingAnimationInProgress = YES;
+}
+
+- (void)cellContextMenuWillShow:(NSNotification *)note{
+    self.customEditingAnimationInProgress = YES;
+}
+
+- (void)cellContextMenuDidSelect:(NSNotification *)note {
+    SJTableViewCell *cell = note.object;
+    NSInteger index = [note.userInfo[SJTableViewCellSwipeMenuItemIndexKey] integerValue];
+    [self tableViewCell:cell didSelectMenuViewItemIndex:index];
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([tableView cellForRowAtIndexPath:indexPath] == self.cellDisplayingMenuOptions && [self canSwipeCellToShowMenuView]) {
+        [self hideMenuOptionsAnimated:YES];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)hideMenuOptionsAnimated:(BOOL)animated {
+    __weak SJTableViewController *weakSelf = self;
+    [self.cellDisplayingMenuOptions setMenuOptionsViewHidden:YES animated:animated completionHandler:^{
+        weakSelf.customEditing = NO;
+    }];
+}
+
+- (void)setCustomEditing:(BOOL)customEditing {
+    if (_customEditing != customEditing) {
+        _customEditing = customEditing;
+        self.tableView.scrollEnabled = !customEditing;
+        if (customEditing) {
+            if (!_overlayView) {
+                _overlayView = [[SJTableViewOverlayView alloc] initWithFrame:self.view.bounds];
+                _overlayView.backgroundColor = [UIColor clearColor];
+                _overlayView.delegate = self;
+            }
+            self.overlayView.frame = self.view.bounds;
+            [self.view addSubview:_overlayView];
+            if (self.shouldDisableUserInteractionWhileEditing) {
+                for (UIView *view in self.tableView.subviews) {
+                    if ((view.gestureRecognizers.count == 0) && view != self.cellDisplayingMenuOptions && view != self.overlayView) {
+                        view.userInteractionEnabled = NO;
+                    }
+                }
+            }
+        } else {
+            self.cellDisplayingMenuOptions = nil;
+            [self.overlayView removeFromSuperview];
+            
+            for (UIView *view in self.tableView.subviews) {
+                if ((view.gestureRecognizers.count == 0) && view != self.cellDisplayingMenuOptions && view != self.overlayView) {
+                    view.userInteractionEnabled = YES;
+                }
+            }
+        }
+    }
+}
+
+- (UIView *)overlayView:(SJTableViewOverlayView *)view didHitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    
+    BOOL shouldIterceptTouches = YES;
+    // 坐标的相关转换
+    CGPoint location = [self.view convertPoint:point fromView:view];
+    CGRect frame = CGRectMake(self.cellDisplayingMenuOptions.left - self.tableView.contentOffset.x, self.cellDisplayingMenuOptions.top - self.tableView.contentOffset.y, self.cellDisplayingMenuOptions.width, self.cellDisplayingMenuOptions.height);
+    CGRect rect = [self.view convertRect:frame toView:self.view];
+    // 判断点击的地方 是否在当前侧滑的cell，如果是 拦截事件的传递，直接传递到cell，如果否，则继续传递到下一个响应者做相应的处理，即（HBTableViewOverlayView——>self.view）
+    shouldIterceptTouches = CGRectContainsPoint(rect, location);
+    if (!shouldIterceptTouches) {
+        [self hideMenuOptionsAnimated:YES];
+    }
+    return (shouldIterceptTouches) ? [self.cellDisplayingMenuOptions hitTest:point withEvent:event] : view;
+}
+
+- (void)tableViewCell:(SJTableViewCell *)cell didSelectMenuViewItemIndex:(NSInteger)index{
+    /*
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath.row > self.items.count) {
+        return;
+    }
+    if (index == 0) { //删除
+        [self.items removeObjectAtIndex:indexPath.row];
+    }
+    
+    [self createDataSource];
+     */
+}
+
 
 @end
