@@ -96,6 +96,10 @@
     
 }
 
+- (void)handleWhenLessOnePage {
+    
+}
+
 //controller直接调用自动下拉刷新
 - (void)autoPullDown{
     [self.refreshControll startPullDownRefreshing];
