@@ -3,7 +3,7 @@
 //
 //
 //  Created by Soldier on 16/4/1.
-//  Copyright © 2016年 Shaojie Hong. All rights reserved.
+//  Copyright © 2016年 厦门海豹信息技术. All rights reserved.
 //
 
 #import "SJModelViewController.h"
@@ -24,6 +24,11 @@
 
 - (void)scrollWithContentOffsetY:(CGFloat)contentOffsetY offset:(CGFloat)offset; // offset 其它参数
 
+- (void)itemControllBeginPullDownRefreshing; //tab Controller 下拉刷新回调
+
+- (void)scrollViewDidScrollWithContentOffsetY:(CGFloat)contentOffsetY offset:(CGFloat)offset;
+
+
 @end
 
 
@@ -41,6 +46,7 @@
 @property (nonatomic, strong) SJSlidePageModel *model;
 @property (nonatomic, strong) FDSlideBar *slideBar;
 @property (nonatomic, strong) NSMutableArray *tabItems;
+@property (nonatomic, assign) BOOL isClickSlideBar; //通过点击切换页面
 
 - (CGRect)slideBarFrame;
 
@@ -69,5 +75,15 @@
  * 获取collectionView中当前controller
  */
 - (SJViewController *)getCurrentCellController;
+
+/**
+ * 滑动到某个tab
+ */
+- (void)slideToTabWithIndex:(NSInteger)index;
+
+/**
+ * 点击某个tab的回调
+ */
+- (void)clickTapWithIndex:(NSInteger)index;
 
 @end

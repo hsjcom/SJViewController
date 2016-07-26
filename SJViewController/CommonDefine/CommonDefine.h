@@ -72,6 +72,9 @@ Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
 
+#define WS(weakSelf) __weak typeof (self) weakSelf = self;
+#define SSelf(strongSelf, weakSelf) __strong typeof(weakSelf) strongSelf = weakSelf;
+
 #define DefaultGrayImgName @"gray.png"
 #define DefaultGrayImage [UIImage imageNamed:@"gray.png"]
 

@@ -1,9 +1,9 @@
 //
 //  SJSlidePageController.m
-//
+//  
 //
 //  Created by Soldier on 16/4/1.
-//  Copyright © 2016年 Shaojie Hong. All rights reserved.
+//  Copyright © 2016年 厦门海豹信息技术. All rights reserved.
 //
 
 #import "SJSlidePageController.h"
@@ -11,7 +11,6 @@
 #import <objc/runtime.h>
 
 @interface SJSlidePageController () {
-    BOOL _isClickSlideBar; //通过点击切换页面
 }
 
 @end
@@ -36,6 +35,15 @@
     
     [self slideBar];
     [self mainColllectionView];
+    
+    //侧滑手势冲突解决方式
+    NSArray *gestureArray = self.navigationController.view.gestureRecognizers;
+    //当是侧滑手势的时候设置scrollview需要此手势失效才生效即可
+    for (UIGestureRecognizer *gesture in gestureArray) {
+        if ([gesture isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+            [self.mainColllectionView.panGestureRecognizer requireGestureRecognizerToFail:gesture];
+        }
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -62,7 +70,7 @@
         _mainColllectionView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:_mainColllectionView];
         
-        [_mainColllectionView registerClass:[SJSlidePageCell class] forCellWithReuseIdentifier:@"HBSlidePageCell"];
+        [_mainColllectionView registerClass:[SJSlidePageCell class] forCellWithReuseIdentifier:@"SJSlidePageCell"];
         _mainColllectionView.showsVerticalScrollIndicator = NO;
         _mainColllectionView.showsHorizontalScrollIndicator = NO;
         _mainColllectionView.pagingEnabled = YES;
@@ -88,9 +96,10 @@
         _slideBar.itemColor = COLOR_TEXT_2;
         _slideBar.itemSelectedColor = COLOR_TEXT_1;
         _slideBar.sliderColor = RGBCOLOR(255, 200, 17);
+        WS(weakSelf);
         [_slideBar slideBarItemSelectedCallback:^(NSUInteger idx) {
-            [self.mainColllectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-            
+            [weakSelf.mainColllectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+            [weakSelf clickTapWithIndex:idx];
             _isClickSlideBar = YES;
         }];
         [self.view addSubview:_slideBar];
@@ -123,6 +132,14 @@
     [self.mainColllectionView reloadData];
     
     [self setupSlideBarTabs:_tabItems];
+    
+    //这里设置生效
+    _slideBar.itemColor = COLOR_TEXT_2;
+    _slideBar.itemSelectedColor = COLOR_TEXT_1;
+}
+
+- (void)clickTapWithIndex:(NSInteger)index {
+    
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -143,7 +160,7 @@
     [self pageIndex:indexPath.row];
     
     /*
-    HBSlidePageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HBSlidePageCell" forIndexPath:indexPath];
+    SJSlidePageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SJSlidePageCell" forIndexPath:indexPath];
     [cell initWithQuery:[self controllersInitialQuary] delegate:self index:self.pageIndex];
     [cell reloadDataWithMode:[self reloadModelFromMianModel]];
     */
@@ -198,16 +215,18 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGPoint tempPoint = CGPointMake(scrollView.contentOffset.x, 0);
     NSIndexPath *indexPath = [self.mainColllectionView indexPathForItemAtPoint:tempPoint];
-    [self.slideBar selectSlideBarItemAtIndex:indexPath.row];
+    if (_slideBar) {
+        [self.slideBar selectSlideBarItemAtIndex:indexPath.row];
+    }
 }
 
 /*
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     CGPoint tempPoint = CGPointMake(scrollView.contentOffset.x, 0);
     NSIndexPath *indexPath = [self.mainColllectionView indexPathForItemAtPoint:tempPoint];
-    HBSlidePageCell *cell = (HBSlidePageCell *)[self.mainColllectionView cellForItemAtIndexPath:indexPath];
+    SJSlidePageCell *cell = (SJSlidePageCell *)[self.mainColllectionView cellForItemAtIndexPath:indexPath];
     if (cell.controller.tableView.contentOffset.y > 0) {
-        for (HBSlidePageModel *item in self.model.items) {
+        for (SJSlidePageModel *item in self.model.items) {
             if (item.pageIndex == cell.controller.pageIndex) {
                 item.contentOffsetY = cell.controller.tableView.contentOffset.y;
                 break;
@@ -278,7 +297,19 @@
     return nil;
 }
 
-#pragma mark - HBSlidePageDelegate
+/**
+ * 滑动到某个tab
+ */
+- (void)slideToTabWithIndex:(NSInteger)index {
+    if (index < self.tabItems.count) {
+        [self.mainColllectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        if (_slideBar) {
+            [self.slideBar selectSlideBarItemAtIndex:index];       
+        }
+    }
+}
+
+#pragma mark - SJSlidePageDelegate
 
 - (void)updatePageModel:(SJSlidePageModel *)model {
     if (!model) {
@@ -308,48 +339,35 @@
  * 根据需要在子类重写
  */
 - (void)scrollWithContentOffsetY:(CGFloat)contentOffsetY offset:(CGFloat)offset {
-    /* eg 1.
-    if (contentOffsetY <= 0 || ABS(contentOffsetY) > 100) {
-        return;
-    }
-    
-    self.slideBar.top = - contentOffsetY;
-    
-    self.mainColllectionView.top = self.slideBar.height - contentOffsetY ;
-    self.mainColllectionView.height = (self.view.height - self.slideBar.height) + contentOffsetY;
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;//滚动方向
-    flowLayout.itemSize = CGSizeMake(self.view.width, self.mainColllectionView.height);
-    flowLayout.minimumInteritemSpacing = 0.0;
-    flowLayout.minimumLineSpacing = 0.0;
-    self.mainColllectionView.collectionViewLayout = flowLayout;
-     */
-    
-    /* eg 2.
+    /* eg
     // offset 1 下滑   0 上滑
-    if (offset < 1) {
-        if (self.slideBar.top > -100) {
-            [self setSlideBarTop:100];
+    CGFloat offsetHeight = self.heardView.height - self.slideBar.height;
+    if (offset < 1) { //上滑
+        if (self.heardView.top > - offsetHeight) {
+            [self setSlideBarTop:offsetHeight];
         }
-    } else {
-        if (self.slideBar.top < 0) {
-            [self setSlideBarTop:0];
+    } else { //下滑
+        if (contentOffsetY < 44) { //contentOffsetY < offsetHeight
+            if (self.heardView.top < 0) {
+                [self setSlideBarTop:0];
+            }
         }
     }
-     */
+    */
 }
 
 /*
 - (void)setSlideBarTop:(CGFloat)contentOffsetY {
-    [UIView animateWithDuration:0.3 animations:^{
-        self.slideBar.top = - contentOffsetY;
-        self.mainColllectionView.top = self.slideBar.height - contentOffsetY;
+    [UIView animateWithDuration:0.4 animations:^{
+        self.heardView.top = - contentOffsetY;
+        self.mainColllectionView.top = self.heardView.height - contentOffsetY;
     } completion:^(BOOL finished) {
+        
     }];
     
     float durtion = contentOffsetY > 0 ? 0 : 0.3;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(durtion * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.mainColllectionView.height = (self.view.height - self.slideBar.height) + contentOffsetY;
+        self.mainColllectionView.height = (self.view.height - self.heardView.height) + contentOffsetY;
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;//滚动方向

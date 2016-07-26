@@ -1,14 +1,15 @@
 //
-//  SJSlidePageItemController.h
+//  SlidePageItemController.h
 //
 //
 //  Created by Soldier on 16/3/30.
-//  Copyright © 2016年 Shaojie Hong. All rights reserved.
+//  Copyright © 2016年 厦门海豹信息技术. All rights reserved.
 //
 
 #import "SJTableViewController.h"
-#import "SJSlidePageController.h"
 #import "SJSlidePageModel.h"
+#import "SJSlidePageController.h"
+
 
 /**
  * 注意
@@ -34,5 +35,7 @@
 - (void)initialPageIndex:(NSInteger)index;
 
 - (void)initialQuery:(NSDictionary *)query;
+
+
 
 @end

@@ -51,11 +51,6 @@
 		B213BE3D1B9E96AA0015B33E /* navBarBg44@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B213BE341B9E96AA0015B33E /* navBarBg44@2x.png */; };
 		B213BE3E1B9E96AA0015B33E /* navBarBg64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B213BE351B9E96AA0015B33E /* navBarBg64@2x.png */; };
 		B213BE3F1B9E96AA0015B33E /* noNetworkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B213BE361B9E96AA0015B33E /* noNetworkIcon@2x.png */; };
-		B224B17D1CCA0BEC0018A031 /* SJSlidePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1741CCA0BEC0018A031 /* SJSlidePageCell.m */; };
-		B224B17E1CCA0BEC0018A031 /* SJSlidePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1761CCA0BEC0018A031 /* SJSlidePageController.m */; };
-		B224B17F1CCA0BEC0018A031 /* SJSlidePageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1781CCA0BEC0018A031 /* SJSlidePageItemController.m */; };
-		B224B1801CCA0BEC0018A031 /* SJSlidePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B17A1CCA0BEC0018A031 /* SJSlidePageModel.m */; };
-		B224B1811CCA0BEC0018A031 /* SJSlideTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B17C1CCA0BEC0018A031 /* SJSlideTabItem.m */; };
 		B224B1851CCA101B0018A031 /* SJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1841CCA101B0018A031 /* SJModel.m */; };
 		B224B18B1CCA11400018A031 /* FDSlideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B1881CCA11400018A031 /* FDSlideBar.m */; };
 		B224B18C1CCA11400018A031 /* FDSlideBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B224B18A1CCA11400018A031 /* FDSlideBarItem.m */; };
@@ -78,6 +73,11 @@
 		B2D363EC1B9C2FB900F24E11 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363E81B9C2FB900F24E11 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B2D363ED1B9C2FB900F24E11 /* RFJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D363EB1B9C2FB900F24E11 /* RFJModel.m */; };
 		B2D9193E1C92D59F00F050DB /* UITextField+SJ.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D9193D1C92D59F00F050DB /* UITextField+SJ.m */; };
+		B2D9902A1D474870005DA072 /* SJSlidePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D990211D474870005DA072 /* SJSlidePageCell.m */; };
+		B2D9902B1D474870005DA072 /* SJSlidePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D990231D474870005DA072 /* SJSlidePageController.m */; };
+		B2D9902C1D474870005DA072 /* SJSlidePageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D990251D474870005DA072 /* SJSlidePageItemController.m */; };
+		B2D9902D1D474870005DA072 /* SJSlidePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D990271D474870005DA072 /* SJSlidePageModel.m */; };
+		B2D9902E1D474870005DA072 /* SJSlideTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D990291D474870005DA072 /* SJSlideTabItem.m */; };
 		B2DF8F7C1C27CB69009A4675 /* SJSwipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F6E1C27CB69009A4675 /* SJSwipTableViewCell.m */; };
 		B2DF8F7D1C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F711C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.m */; };
 		B2DF8F7E1C27CB69009A4675 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF8F731C27CB69009A4675 /* SWCellScrollView.m */; };
@@ -233,16 +233,6 @@
 		B213BE341B9E96AA0015B33E /* navBarBg44@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBg44@2x.png"; sourceTree = "<group>"; };
 		B213BE351B9E96AA0015B33E /* navBarBg64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarBg64@2x.png"; sourceTree = "<group>"; };
 		B213BE361B9E96AA0015B33E /* noNetworkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noNetworkIcon@2x.png"; sourceTree = "<group>"; };
-		B224B1731CCA0BEC0018A031 /* SJSlidePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageCell.h; sourceTree = "<group>"; };
-		B224B1741CCA0BEC0018A031 /* SJSlidePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageCell.m; sourceTree = "<group>"; };
-		B224B1751CCA0BEC0018A031 /* SJSlidePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageController.h; sourceTree = "<group>"; };
-		B224B1761CCA0BEC0018A031 /* SJSlidePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageController.m; sourceTree = "<group>"; };
-		B224B1771CCA0BEC0018A031 /* SJSlidePageItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageItemController.h; sourceTree = "<group>"; };
-		B224B1781CCA0BEC0018A031 /* SJSlidePageItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageItemController.m; sourceTree = "<group>"; };
-		B224B1791CCA0BEC0018A031 /* SJSlidePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageModel.h; sourceTree = "<group>"; };
-		B224B17A1CCA0BEC0018A031 /* SJSlidePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageModel.m; sourceTree = "<group>"; };
-		B224B17B1CCA0BEC0018A031 /* SJSlideTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlideTabItem.h; sourceTree = "<group>"; };
-		B224B17C1CCA0BEC0018A031 /* SJSlideTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlideTabItem.m; sourceTree = "<group>"; };
 		B224B1831CCA101B0018A031 /* SJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJModel.h; sourceTree = "<group>"; };
 		B224B1841CCA101B0018A031 /* SJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJModel.m; sourceTree = "<group>"; };
 		B224B1871CCA11400018A031 /* FDSlideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDSlideBar.h; sourceTree = "<group>"; };
@@ -290,6 +280,16 @@
 		B2D363EB1B9C2FB900F24E11 /* RFJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFJModel.m; sourceTree = "<group>"; };
 		B2D9193C1C92D59F00F050DB /* UITextField+SJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SJ.h"; sourceTree = "<group>"; };
 		B2D9193D1C92D59F00F050DB /* UITextField+SJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SJ.m"; sourceTree = "<group>"; };
+		B2D990201D474870005DA072 /* SJSlidePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageCell.h; sourceTree = "<group>"; };
+		B2D990211D474870005DA072 /* SJSlidePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageCell.m; sourceTree = "<group>"; };
+		B2D990221D474870005DA072 /* SJSlidePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageController.h; sourceTree = "<group>"; };
+		B2D990231D474870005DA072 /* SJSlidePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageController.m; sourceTree = "<group>"; };
+		B2D990241D474870005DA072 /* SJSlidePageItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageItemController.h; sourceTree = "<group>"; };
+		B2D990251D474870005DA072 /* SJSlidePageItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageItemController.m; sourceTree = "<group>"; };
+		B2D990261D474870005DA072 /* SJSlidePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlidePageModel.h; sourceTree = "<group>"; };
+		B2D990271D474870005DA072 /* SJSlidePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlidePageModel.m; sourceTree = "<group>"; };
+		B2D990281D474870005DA072 /* SJSlideTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSlideTabItem.h; sourceTree = "<group>"; };
+		B2D990291D474870005DA072 /* SJSlideTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSlideTabItem.m; sourceTree = "<group>"; };
 		B2DF8F6D1C27CB69009A4675 /* SJSwipTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSwipTableViewCell.h; sourceTree = "<group>"; };
 		B2DF8F6E1C27CB69009A4675 /* SJSwipTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSwipTableViewCell.m; sourceTree = "<group>"; };
 		B2DF8F701C27CB69009A4675 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
@@ -583,16 +583,16 @@
 		B224B1721CCA0BEC0018A031 /* SJSlidePage */ = {
 			isa = PBXGroup;
 			children = (
-				B224B1731CCA0BEC0018A031 /* SJSlidePageCell.h */,
-				B224B1741CCA0BEC0018A031 /* SJSlidePageCell.m */,
-				B224B1751CCA0BEC0018A031 /* SJSlidePageController.h */,
-				B224B1761CCA0BEC0018A031 /* SJSlidePageController.m */,
-				B224B1771CCA0BEC0018A031 /* SJSlidePageItemController.h */,
-				B224B1781CCA0BEC0018A031 /* SJSlidePageItemController.m */,
-				B224B1791CCA0BEC0018A031 /* SJSlidePageModel.h */,
-				B224B17A1CCA0BEC0018A031 /* SJSlidePageModel.m */,
-				B224B17B1CCA0BEC0018A031 /* SJSlideTabItem.h */,
-				B224B17C1CCA0BEC0018A031 /* SJSlideTabItem.m */,
+				B2D990201D474870005DA072 /* SJSlidePageCell.h */,
+				B2D990211D474870005DA072 /* SJSlidePageCell.m */,
+				B2D990221D474870005DA072 /* SJSlidePageController.h */,
+				B2D990231D474870005DA072 /* SJSlidePageController.m */,
+				B2D990241D474870005DA072 /* SJSlidePageItemController.h */,
+				B2D990251D474870005DA072 /* SJSlidePageItemController.m */,
+				B2D990261D474870005DA072 /* SJSlidePageModel.h */,
+				B2D990271D474870005DA072 /* SJSlidePageModel.m */,
+				B2D990281D474870005DA072 /* SJSlideTabItem.h */,
+				B2D990291D474870005DA072 /* SJSlideTabItem.m */,
 			);
 			path = SJSlidePage;
 			sourceTree = "<group>";
@@ -1071,11 +1071,11 @@
 				B213BDE41B9D61B40015B33E /* HBErrorView.m in Sources */,
 				B2DF8F7C1C27CB69009A4675 /* SJSwipTableViewCell.m in Sources */,
 				B213BDE31B9D61B40015B33E /* HBEmptyView.m in Sources */,
+				B2D9902B1D474870005DA072 /* SJSlidePageController.m in Sources */,
 				B213BDE71B9D61B40015B33E /* SJTopTipView.m in Sources */,
 				B2E9D1B51C83F1DB003F767B /* NSDate+YYAdd.m in Sources */,
 				FBE5A6351BD203460037E321 /* NJKWebViewProgress.m in Sources */,
 				B213BDC01B9D4DC80015B33E /* SJViewController.m in Sources */,
-				B224B17E1CCA0BEC0018A031 /* SJSlidePageController.m in Sources */,
 				B2E9D1BD1C83F1DB003F767B /* NSString+YYAdd.m in Sources */,
 				B2E9D1C81C83F1DB003F767B /* UIGestureRecognizer+YYAdd.m in Sources */,
 				B2E9D1C21C83F1DB003F767B /* UIBarButtonItem+YYAdd.m in Sources */,
@@ -1090,7 +1090,6 @@
 				B2E9D1CB1C83F1DB003F767B /* UIScrollView+YYAdd.m in Sources */,
 				B213BE151B9D70610015B33E /* CLLRefreshHeadController.m in Sources */,
 				B2DF8F7F1C27CB69009A4675 /* SWLongPressGestureRecognizer.m in Sources */,
-				B224B17D1CCA0BEC0018A031 /* SJSlidePageCell.m in Sources */,
 				B2E9D1DB1C83F1DB003F767B /* ViewConstructUtil.m in Sources */,
 				B2E9D1D11C83F1DB003F767B /* ImageUtil.m in Sources */,
 				B224B18C1CCA11400018A031 /* FDSlideBarItem.m in Sources */,
@@ -1106,6 +1105,7 @@
 				B2E9D1B21C83F1DB003F767B /* NSArray+YYAdd.m in Sources */,
 				B2E9D1BC1C83F1DB003F767B /* NSObject+YYAddForKVO.m in Sources */,
 				FBE5A6361BD203460037E321 /* NJKWebViewProgressView.m in Sources */,
+				B2D9902A1D474870005DA072 /* SJSlidePageCell.m in Sources */,
 				B2E9D1B81C83F1DB003F767B /* NSNotificationCenter+YYAdd.m in Sources */,
 				B2E9D1C51C83F1DB003F767B /* UIControl+YYAdd.m in Sources */,
 				B2D363DE1B9C297500F24E11 /* ASIHTTPRequest.m in Sources */,
@@ -1119,10 +1119,10 @@
 				B213BE141B9D70610015B33E /* CLLRefreshFooterView.m in Sources */,
 				B213BDBC1B9D4DC80015B33E /* SJModelViewController.m in Sources */,
 				B2E9D1B61C83F1DB003F767B /* NSDictionary+YYAdd.m in Sources */,
+				B2D9902C1D474870005DA072 /* SJSlidePageItemController.m in Sources */,
 				B2E9D1B91C83F1DB003F767B /* NSNumber+YYAdd.m in Sources */,
 				B2E9D1C61C83F1DB003F767B /* UIDevice+YYAdd.m in Sources */,
 				B2E9D1C71C83F1DB003F767B /* UIFont+YYAdd.m in Sources */,
-				B224B1801CCA0BEC0018A031 /* SJSlidePageModel.m in Sources */,
 				B2E9D1C91C83F1DB003F767B /* UIImage+YYAdd.m in Sources */,
 				B2E9D1AA1C83F1DB003F767B /* NSData+SJ.m in Sources */,
 				B2E9D1B31C83F1DB003F767B /* NSBundle+YYAdd.m in Sources */,
@@ -1131,7 +1131,6 @@
 				B2E9D1C41C83F1DB003F767B /* UIColor+YYAdd.m in Sources */,
 				B2D363DD1B9C297500F24E11 /* ASIFormDataRequest.m in Sources */,
 				B2E9D1D71C83F1DB003F767B /* StringUtil.m in Sources */,
-				B224B1811CCA0BEC0018A031 /* SJSlideTabItem.m in Sources */,
 				B2E9D1D01C83F1DB003F767B /* DeviceInfo.m in Sources */,
 				B224B18B1CCA11400018A031 /* FDSlideBar.m in Sources */,
 				B2E9D1BE1C83F1DB003F767B /* NSTimer+YYAdd.m in Sources */,
@@ -1145,10 +1144,11 @@
 				B2D9193E1C92D59F00F050DB /* UITextField+SJ.m in Sources */,
 				B2E9D1BF1C83F1DB003F767B /* CALayer+YYAdd.m in Sources */,
 				B224B1851CCA101B0018A031 /* SJModel.m in Sources */,
-				B224B17F1CCA0BEC0018A031 /* SJSlidePageItemController.m in Sources */,
 				B2E9D1AE1C83F1DB003F767B /* UIImage+Color.m in Sources */,
 				B2E9D1DA1C83F1DB003F767B /* ValueValidator.m in Sources */,
+				B2D9902E1D474870005DA072 /* SJSlideTabItem.m in Sources */,
 				B2E9D1AD1C83F1DB003F767B /* UIAlertView+Blocks.m in Sources */,
+				B2D9902D1D474870005DA072 /* SJSlidePageModel.m in Sources */,
 				B213BE161B9D70610015B33E /* CLLRefreshHeadView.m in Sources */,
 				B2E9D1CE1C83F1DB003F767B /* UIView+YYAdd.m in Sources */,
 				B2E9D1C31C83F1DB003F767B /* UIBezierPath+YYAdd.m in Sources */,
