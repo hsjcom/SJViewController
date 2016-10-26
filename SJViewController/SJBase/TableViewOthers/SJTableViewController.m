@@ -43,9 +43,12 @@
 @synthesize loadRefreshEnable = _loadRefreshEnable;
 
 - (void)dealloc {
-    [self setDataSource:nil];
-    [self setTableView:nil];
-    [self setRefreshControll:nil];
+    _tableView.dataSource = nil;
+    _tableView.delegate = nil;
+    
+    _dataSource = nil;
+    _tableView = nil;
+    _refreshControll = nil;
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [[NSNotificationCenter defaultCenter]removeObserver:self];

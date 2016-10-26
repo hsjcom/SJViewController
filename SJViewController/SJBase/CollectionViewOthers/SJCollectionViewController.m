@@ -17,9 +17,12 @@
 
 #pragma mark  ========================        Init Data           ========================
 - (void)dealloc {
-    [self setDataSource:nil];
-    [self setCollectionView:nil];
-    [self setRefreshControll:nil];
+    _collectionView.dataSource = nil;
+    _collectionView.delegate = nil;
+    
+    _dataSource = nil;
+    _collectionView = nil;
+    _refreshControll = nil;
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
