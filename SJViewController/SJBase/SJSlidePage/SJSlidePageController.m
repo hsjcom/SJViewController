@@ -98,6 +98,7 @@
         _slideBar.sliderColor = RGBCOLOR(255, 200, 17);
         WS(weakSelf);
         [_slideBar slideBarItemSelectedCallback:^(NSUInteger idx) {
+            [self pageIndex:idx]; //确保self.page 正确
             [weakSelf.mainColllectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
             [weakSelf clickTapWithIndex:idx];
             _isClickSlideBar = YES;
@@ -216,6 +217,7 @@
     CGPoint tempPoint = CGPointMake(scrollView.contentOffset.x, 0);
     NSIndexPath *indexPath = [self.mainColllectionView indexPathForItemAtPoint:tempPoint];
     if (_slideBar) {
+        [self pageIndex:indexPath.row]; //确保self.page 正确
         [self.slideBar selectSlideBarItemAtIndex:indexPath.row];
     }
 }
