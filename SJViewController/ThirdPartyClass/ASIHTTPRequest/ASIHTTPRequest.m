@@ -1243,9 +1243,6 @@ static NSOperationQueue *sharedQueue = nil;
         return;
     }
 
-
-    
-    
     //
     // Handle SSL certificate settings
     //
@@ -1269,6 +1266,23 @@ static NSOperationQueue *sharedQueue = nil;
                                     (CFTypeRef)sslProperties);
             [sslProperties release];
         } else {
+            /*
+             *适配https
+             *设置SNI host信息
+             * by Soldier
+             */
+            /*
+            NSString *host = [UrlManager httpsHost]; //https host
+            [[self readStream] setProperty:NSStreamSocketSecurityLevelNegotiatedSSL forKey:NSStreamSocketSecurityLevelKey];
+            NSDictionary *sslProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                           [NSNumber numberWithBool:NO], kCFStreamSSLAllowsExpiredCertificates,
+                                           [NSNumber numberWithBool:NO], kCFStreamSSLAllowsAnyRoot,
+                                           [NSNumber numberWithBool:YES],  kCFStreamSSLValidatesCertificateChain,
+                                           @"kCFStreamSocketSecurityLevelTLSv1_0SSLv3", kCFStreamSSLLevel,
+                                           host, kCFStreamSSLPeerName,
+                                           nil];
+            //
+             */
             NSDictionary *sslProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
                                            [NSNumber numberWithBool:NO], kCFStreamSSLAllowsExpiredCertificates,
                                            [NSNumber numberWithBool:NO], kCFStreamSSLAllowsAnyRoot,
@@ -2088,10 +2102,10 @@ static NSOperationQueue *sharedQueue = nil;
     if (jsonDic) {
         self.responsejsonDict = jsonDic;
         
-    }else{
+    } else {
         
         // 查找 }  取其之前的字符串  json 异常处理
-        NSString* realJson = self.responseString;
+        NSString *realJson = self.responseString;
         NSUInteger location = [realJson rangeOfString:@"}" options:NSBackwardsSearch].length;
         if (location > 0){
             realJson = [realJson substringToIndex:location+1];
@@ -2107,7 +2121,8 @@ static NSOperationQueue *sharedQueue = nil;
             }
         }
         
-//        NSLog(@"Errorurl = %@ \r\n  Invalid-JSON 异常= :%@ ",[self url], self.responseString);
+        //log
+//        NSLog(@"Errorurl = %@ \r\n  Invalid-JSON 异常= :%@ ", [self url], self.responseString);
     }
     
 	if (delegate && [delegate respondsToSelector:didFinishSelector]) {
@@ -2138,8 +2153,8 @@ static NSOperationQueue *sharedQueue = nil;
     if ([self isCancelled]) {
         return;
     }
-    
-    
+
+    // log
 //    NSDictionary *reportParam = @{@"ErrorCode" : [NSString stringWithFormat:@"%ld", (long)self.responseStatusCode], @"ErrorDescription" : error.userInfo.description, @"Errorurl":self.url};
 //    NSLog(@"RECEIVE obj = %@,  http error =:%@", self.delegate, reportParam);
     
