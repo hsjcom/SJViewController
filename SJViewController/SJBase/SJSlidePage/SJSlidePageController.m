@@ -21,6 +21,13 @@
 
 @implementation SJSlidePageController
 
+- (void)dealloc {
+    if (_mainColllectionView) {
+        _mainColllectionView.delegate = nil;
+        _mainColllectionView.dataSource = nil;
+    }
+}
+
 - (id)initWithQuery:(NSDictionary *)query{
     self = [super initWithQuery:query];
     if (self) {
