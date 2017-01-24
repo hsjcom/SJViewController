@@ -44,7 +44,7 @@
 @implementation SJTableViewCell
 
 - (void)dealloc {
-    [self setObject:nil];
+//    [self setObject:nil];
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {

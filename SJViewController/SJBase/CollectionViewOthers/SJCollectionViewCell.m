@@ -12,7 +12,7 @@
 @implementation SJCollectionViewCell
 
 - (void)dealloc {
-    [self setObject:nil];
+//    [self setObject:nil];
 }
 
 + (CGFloat)collectionView:(UICollectionView *)collectionView rowHeightForObject:(id)object {
