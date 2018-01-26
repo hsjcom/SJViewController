@@ -165,6 +165,10 @@
         _collectionView.delegate = self;
         _collectionView.alwaysBounceVertical = YES;
         [self collectionViewRegisterCellClassAndReuseIdentifier];
+        // iOS11 适配
+        if (@available(iOS 11.0, *)) {
+            _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
     }
     return _collectionView;
 }

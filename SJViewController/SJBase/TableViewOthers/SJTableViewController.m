@@ -132,6 +132,14 @@
         _tableView.backgroundColor = [self backgroundColor];
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        // iOS11 适配
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            //iOS1默认使用Self-Sizing, 可能会引起contentOffset的变化。关闭Self-Sizing
+            _tableView.estimatedRowHeight = 0;
+            _tableView.estimatedSectionHeaderHeight = 0;
+            _tableView.estimatedSectionFooterHeight = 0;
+        }
         [self.view addSubview:_tableView];
     }
     return _tableView;
@@ -149,7 +157,6 @@
         [_tableView reloadData];
     }
 }
-
 
 - (void)didFinishLoad:(SJHTTPRequest *)request {
     [super didFinishLoad:request];
